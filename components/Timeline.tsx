@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Activity } from '../types';
 import { CheckCircle2, Circle, MapPin, AlertTriangle, Clock, ArrowRight, ExternalLink, Navigation, AlertCircle, Headphones } from 'lucide-react';
-import { calculateDuration, calculateTimeProgress } from '../services/utils';
+import { calculateDuration, calculateTimeProgress, formatMinutes } from '../services/utils';
 
 interface TimelineProps {
   itinerary: Activity[];
@@ -25,14 +25,6 @@ const Timeline: React.FC<TimelineProps> = ({ itinerary, onToggleComplete, onLoca
     const [startH, startM] = startStrNext.split(':').map(Number);
     const diffMins = (startH * 60 + startM) - (endH * 60 + endM);
     return diffMins > 0 ? diffMins : 0;
-  };
-
-  const formatMinutes = (mins: number) => {
-    const h = Math.floor(mins / 60);
-    const m = mins % 60;
-    if (h > 0 && m > 0) return `${h}h ${m}m`;
-    if (h > 0) return `${h}h`;
-    return `${m} min`;
   };
 
   const getStatusColor = (act: Activity) => {

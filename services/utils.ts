@@ -15,6 +15,14 @@ export const calculateDistance = (coord1: Coordinates, coord2: Coordinates): num
   return R * c; // in metres
 };
 
+export const formatMinutes = (mins: number): string => {
+  const h = Math.floor(mins / 60);
+  const m = mins % 60;
+  if (h > 0 && m > 0) return `${h}h ${m}min`;
+  if (h > 0) return `${h}h`;
+  return `${m}min`;
+};
+
 export const formatTimeRemaining = (targetTimeStr: string): string => {
   const now = new Date();
   const [hours, minutes] = targetTimeStr.split(':').map(Number);
