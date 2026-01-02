@@ -101,13 +101,14 @@ export const INITIAL_ITINERARY: Activity[] = [
       endLocationName: 'Estación FFCC', 
       coords: COORDS.LARGODELAPACE, 
       endCoords: COORDS.STAZIONE_CIVITAVECCHIA, 
-      description: 'Logística: Toma el bus urbano local hacia la estación. PREGUNTAR DONDE COMPRAR EL BILLETE, Y SI NO INTENTAR PAGARLO AL CONDUCTOR', 
-      keyDetails: '', 
+      description: 'Logística: Toma el bus urbano local hacia la estación.', 
+      keyDetails: 'Al ser tan temprano, PREGUNTAR DONDE COMPRAR EL BILLETE PARA EL BUS (normalmente se compran en estancos, kioscos o en Bar de la Estación Largo della Pace), Y SI NO, INTENTAR PAGARLO AL CONDUCTOR', 
       priceEUR: 2, 
       type: 'transport', 
       completed: false, 
       notes: 'CRITICAL', 
-      googleMapsUrl: 'https://maps.app.goo.gl/6HVPmd9PuhR8zmbo7' 
+      googleMapsUrl: 'https://maps.app.goo.gl/6HVPmd9PuhR8zmbo7',
+      contingencyNote: 'Si el bus se retrasa coger un taxi a la Estación de tren (10 euros)'
     },
     { 
       id: '4', 
@@ -350,13 +351,14 @@ export const INITIAL_ITINERARY: Activity[] = [
       endLocationName: 'Civitavecchia', 
       coords: COORDS.STAZIONE_S_PIETRO, 
       endCoords: COORDS.STAZIONE_CIVITAVECCHIA, 
-      description: '¡Vital!: El tren de las 15:02 es tu garantía para llegar a tiempo. Si hay retrasos, el de las 15:35 es la última opción.', 
-      keyDetails: 'Tu ticket BIRG sigue siendo válido para este trayecto de vuelta.', 
+      description: 'Tu ticket BIRG sigue siendo válido para este trayecto de vuelta.', 
+      keyDetails: 'Busca del ANDÉN en que parara tú tren.', 
       priceEUR: 0, 
       type: 'transport', 
       completed: false, 
       notes: 'CRITICAL', 
-      googleMapsUrl: 'https://maps.app.goo.gl/QQEwFSMoUECk4nw77' 
+      googleMapsUrl: 'https://maps.app.goo.gl/QQEwFSMoUECk4nw77',
+      contingencyNote: '¡Vital!: El tren de las 15:02 es tu garantía para llegar a tiempo. Si hay retrasos, el de las 15:35 es la última opción.'
     },
     { 
       id: '22', 
