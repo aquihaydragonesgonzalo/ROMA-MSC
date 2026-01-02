@@ -422,7 +422,23 @@ export const INITIAL_ITINERARY: Activity[] = [
 
 export const PRONUNCIATIONS: Pronunciation[] = [
     { word: 'Buongiorno', phonetic: "Bwon-jor-no", simplified: 'Bwon-yor-no', meaning: 'Buenos días' },
+    { word: 'Buonasera', phonetic: "Bwo-na-se-ra", simplified: 'Bwona-sera', meaning: 'Buenas tardes/noches' },
+    { word: 'Ciao', phonetic: "Chao", simplified: 'Chao', meaning: 'Hola / Adiós' },
     { word: 'Grazie', phonetic: "Grat-zye", simplified: 'Grat-sie', meaning: 'Gracias' },
-    { word: 'Gelato', phonetic: "Je-la-to", simplified: 'Ye-la-to', meaning: 'Helado' },
-    { word: 'Quanto costa?', phonetic: "Kwan-to kos-ta", simplified: 'Kwan-to kos-ta', meaning: '¿Cuánto cuesta?' }
+    { word: 'Prego', phonetic: "Pre-go", simplified: 'Pre-go', meaning: 'De nada / Pase' },
+    { word: 'Per favore', phonetic: "Per fa-vo-re", simplified: 'Per fa-vo-re', meaning: 'Por favor' },
+    { word: 'Scusi', phonetic: "Sku-zee", simplified: 'Escusi', meaning: 'Disculpe / Perdón' },
+    { word: 'Quanto costa?', phonetic: "Kwan-to kos-ta", simplified: 'Kwan-to kos-ta', meaning: '¿Cuánto cuesta?' },
+    { word: 'Dov\'è il bagno?', phonetic: "Do-ve il ba-nyo", simplified: 'Dové il baño', meaning: '¿Dónde está el baño?' },
+    { word: 'Il conto, per favore', phonetic: "Il kon-to, per fa-vo-re", simplified: 'Il conto, por favor', meaning: 'La cuenta, por favor' },
+    { word: 'Parla spagnolo?', phonetic: "Par-la spa-nyo-lo", simplified: 'Parla spañolo', meaning: '¿Habla español?' },
+    { word: 'Non capisco', phonetic: "Non ka-pee-sko", simplified: 'Non capisco', meaning: 'No entiendo' },
+    { word: 'Un caffè, per favore', phonetic: "Oon ka-fe, per fa-vo-re", simplified: 'Un café, por favor', meaning: 'Un café, por favor' },
+    { word: 'Dov\'è la stazione?', phonetic: "Do-ve la stat-zyo-ne", simplified: 'Dové la statsione', meaning: '¿Dónde está la estación?' },
+    { word: 'A destra / A sinistra', phonetic: "A des-tra / A see-nees-tra", simplified: 'A destra / A sinistra', meaning: 'A la derecha / A la izquierda' },
+    { word: 'Sì / No', phonetic: "See / No", simplified: 'Si / No', meaning: 'Sí / No' },
+    { word: 'Aiuto!', phonetic: "A-yoo-to", simplified: 'Ayuto', meaning: '¡Ayuda!' },
+    { word: 'Arrivederci', phonetic: "A-ree-ve-der-chi", simplified: 'Arivederchi', meaning: 'Adiós (formal)' },
+    { word: 'Vorrei un gelato', phonetic: "Vor-ray oon je-la-to", simplified: 'Vorrei un yelato', meaning: 'Quisiera un helado' },
+    { word: 'Dov\'è la farmacia?', phonetic: "Do-ve la far-ma-chee-a", simplified: 'Dové la farmachia', meaning: '¿Dónde está la farmacia?' }
 ];
