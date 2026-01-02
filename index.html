@@ -38,6 +38,23 @@
         #root { height: 100%; width: 100%; display: flex; flex-direction: column; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Custom Horizontal Scrollbar for Weather */
+        .custom-h-scrollbar::-webkit-scrollbar {
+            height: 6px;
+        }
+        .custom-h-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 10px;
+        }
+        .custom-h-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        .custom-h-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
         .leaflet-bottom { bottom: 85px !important; }
         
         #initial-loader {
@@ -88,7 +105,8 @@
             CalendarClock, Map as MapIcon, Wallet, BookOpen, Anchor, 
             Headphones, X, Play, Square, Navigation, CheckCircle2, 
             Circle, MapPin, AlertTriangle, Clock, ExternalLink, AlertCircle,
-            Send, Volume2, Languages, PhoneCall, Thermometer, TrendingDown, Info, ArrowRight
+            Send, Volume2, Languages, PhoneCall, Thermometer, TrendingDown, Info, ArrowRight,
+            Sun, Cloud, CloudRain, CloudLightning, Snowflake, Wind, Calendar, ChevronRight
         } from 'lucide-react';
         import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
@@ -391,6 +409,31 @@ Terminamos frente al Arco de Constantino. Imagina el rugido de 50.000 espectador
 
         const Guide = ({ userLocation }) => {
             const [playing, setPlaying] = useState(null);
+            const [weather, setWeather] = useState(null);
+            const [loadingWeather, setLoadingWeather] = useState(true);
+
+            useEffect(() => {
+                const fetchWeather = async () => {
+                    try {
+                        const response = await fetch(
+                            'https://api.open-meteo.com/v1/forecast?latitude=41.89&longitude=12.49&hourly=temperature_2m,weathercode&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=Europe%2FRome'
+                        );
+                        const data = await response.json();
+                        setWeather(data);
+                    } catch (e) { console.error(e); }
+                    finally { setLoadingWeather(false); }
+                };
+                fetchWeather();
+            }, []);
+
+            const getWeatherIcon = (code, size = 20) => {
+                if (code <= 1) return <Sun size={size} className="text-amber-500" />;
+                if (code <= 3) return <Cloud size={size} className="text-slate-400" />;
+                if (code <= 67) return <CloudRain size={size} className="text-blue-500" />;
+                if (code <= 99) return <CloudLightning size={size} className="text-purple-500" />;
+                return <Sun size={size} className="text-amber-500" />;
+            };
+
             const play = (word) => {
                 const ut = new SpeechSynthesisUtterance(word);
                 ut.lang = 'it-IT';
@@ -398,27 +441,119 @@ Terminamos frente al Arco de Constantino. Imagina el rugido de 50.000 espectador
                 setPlaying(word);
                 window.speechSynthesis.speak(ut);
             };
+
             const handleSOS = () => {
                 const msg = `¡SOS! Necesito ayuda en Roma. Ubicación: ${userLocation ? `https://maps.google.com/?q=${userLocation.lat},${userLocation.lng}` : 'GPS no disponible'}`;
                 window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
             };
+
             return (
                 <div className="pb-32 px-4 pt-6 max-w-lg mx-auto h-full overflow-y-auto no-scrollbar">
-                    <h2 className="text-2xl font-bold text-red-800 mb-6 uppercase">Guía Roma</h2>
-                    <div className="mb-8 bg-red-600 rounded-[2rem] p-6 shadow-xl text-white relative">
-                        <div className="flex items-center mb-3"><PhoneCall size={24} className="mr-3 animate-pulse" /><h3 className="font-black text-lg uppercase">SOS WHATSAPP</h3></div>
-                        <p className="text-xs mb-6">Envía tu GPS exacto si te pierdes.</p>
-                        <button onClick={handleSOS} className="w-full py-4 bg-white text-red-700 font-black rounded-2xl text-sm uppercase">Enviar SOS</button>
+                    <h2 className="text-2xl font-bold text-red-800 mb-6 uppercase tracking-tight">Guía Roma</h2>
+                    
+                    {/* SOS WHATSAPP */}
+                    <div className="mb-8 bg-red-600 rounded-[2rem] p-6 shadow-xl text-white relative overflow-hidden">
+                        <div className="absolute top-[-20px] right-[-20px] w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+                        <div className="relative z-10">
+                            <div className="flex items-center mb-3">
+                                <PhoneCall size={24} className="mr-3 animate-pulse" />
+                                <h3 className="font-black text-lg uppercase tracking-widest">SOS WHATSAPP</h3>
+                            </div>
+                            <p className="text-xs text-red-100 mb-6 leading-relaxed">Envía tu ubicación exacta si necesitas asistencia inmediata o te has desorientado.</p>
+                            <button onClick={handleSOS} className="w-full py-4 bg-white text-red-700 font-black rounded-2xl text-sm uppercase tracking-widest shadow-lg active:scale-95 transition-transform">Enviar SOS</button>
+                        </div>
                     </div>
-                    <h3 className="text-lg font-bold mb-4 flex items-center uppercase"><Languages size={20} className="mr-2.5 text-red-600"/> Italiano Básico</h3>
-                    <div className="bg-white rounded-3xl shadow-md border overflow-hidden">
-                        {PRONUNCIATIONS.map((item, idx) => (
-                            <div key={idx} className="p-5 flex justify-between items-center border-b last:border-0">
-                                <div>
-                                    <div className="flex items-center gap-3"><p className="font-black text-red-900 text-lg">{item.word}</p><button onClick={() => play(item.word)} className={`p-2 rounded-full ${playing === item.word ? 'bg-red-100 text-red-600' : 'bg-slate-100'}`}><Volume2 size={16}/></button></div>
-                                    <p className="text-xs text-slate-500 italic">"{item.simplified}"</p>
+
+                    {/* WEATHER SECTION */}
+                    <div className="mb-8">
+                        <div className="flex items-center justify-between mb-4 px-1">
+                            <h3 className="text-lg font-bold text-slate-800 flex items-center uppercase tracking-widest">
+                                <Thermometer size={20} className="mr-2.5 text-red-600"/> Tiempo en Roma
+                            </h3>
+                            {!loadingWeather && <div className="flex items-center gap-1 text-[8px] font-black text-slate-400 uppercase tracking-tighter bg-slate-100 px-2 py-0.5 rounded-full">
+                                <ArrowRight size={10} className="animate-bounce-x" /> DESLIZA
+                            </div>}
+                        </div>
+                        
+                        {loadingWeather ? (
+                            <div className="p-8 text-center bg-white rounded-3xl border border-slate-100">
+                                <div className="w-6 h-6 border-2 border-red-600 border-t-transparent rounded-full animate-spin mx-auto mb-2"></div>
+                                <p className="text-xs font-bold text-slate-400 uppercase">Obteniendo datos...</p>
+                            </div>
+                        ) : (
+                            <div className="space-y-4">
+                                {/* Hourly Forecast with Robust Scroll View */}
+                                <div className="bg-white p-2 pb-4 rounded-[2.5rem] border border-slate-100 shadow-lg relative overflow-hidden">
+                                    <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+                                    <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+                                    
+                                    <div className="flex overflow-x-auto custom-h-scrollbar gap-3 px-6 py-4 items-stretch">
+                                        {weather.hourly.time.map((time, i) => {
+                                            const h = new Date(time).getHours();
+                                            if (h >= 7 && h <= 19) return (
+                                                <div key={time} className="flex flex-col items-center justify-between min-w-[70px] p-3 bg-slate-50/80 rounded-3xl border border-slate-100 shadow-sm transition-all hover:bg-white active:scale-95">
+                                                    <span className="text-[10px] font-black text-slate-400 mb-2 uppercase tracking-tighter">{h}:00</span>
+                                                    <div className="p-2 bg-white rounded-2xl mb-2 flex items-center justify-center shadow-sm">
+                                                        {getWeatherIcon(weather.hourly.weathercode[i], 28)}
+                                                    </div>
+                                                    <span className="text-base font-black text-slate-800 tracking-tighter">{Math.round(weather.hourly.temperature_2m[i])}°</span>
+                                                </div>
+                                            );
+                                            return null;
+                                        })}
+                                    </div>
+                                    <div className="mt-1 flex justify-center items-center gap-2">
+                                        <div className="h-1 w-8 bg-slate-100 rounded-full"></div>
+                                        <span className="text-[7px] font-black text-slate-300 uppercase tracking-[0.3em]">Pronóstico por horas</span>
+                                        <div className="h-1 w-8 bg-slate-100 rounded-full"></div>
+                                    </div>
                                 </div>
-                                <div className="text-right ml-4"><p className="text-[10px] font-black text-slate-500 bg-slate-100 px-3 py-1 rounded-full uppercase border">{item.meaning}</p></div>
+
+                                {/* 5-Day Summary */}
+                                <div className="bg-white rounded-[2rem] border border-slate-100 shadow-md divide-y divide-slate-50 overflow-hidden">
+                                    <div className="p-4 bg-slate-50/50 flex items-center justify-between">
+                                        <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest flex items-center gap-2">
+                                            <Calendar size={14} className="text-red-700" /> Próximos 5 días
+                                        </p>
+                                    </div>
+                                    {weather.daily.time.slice(0,5).map((date, i) => (
+                                        <div key={date} className="flex items-center justify-between p-4 hover:bg-slate-50/30 transition-colors">
+                                            <span className="text-xs font-black text-red-800 uppercase w-12">{new Date(date).toLocaleDateString('es-ES', {weekday: 'short'})}</span>
+                                            <div className="flex-1 flex justify-center">
+                                                {getWeatherIcon(weather.daily.weathercode[i], 20)}
+                                            </div>
+                                            <div className="flex gap-3 w-20 justify-end text-sm font-black">
+                                                <span className="text-slate-800">{Math.round(weather.daily.temperature_2m_max[i])}°</span>
+                                                <span className="text-slate-400 font-medium">{Math.round(weather.daily.temperature_2m_min[i])}°</span>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+                    </div>
+
+                    <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center uppercase tracking-widest px-1">
+                        <Languages size={20} className="mr-2.5 text-red-600"/> Italiano Básico
+                    </h3>
+                    <div className="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden mb-12">
+                        {PRONUNCIATIONS.map((item, idx) => (
+                            <div key={idx} className="p-5 flex justify-between items-center border-b last:border-0 hover:bg-slate-50/50 transition-colors group">
+                                <div>
+                                    <div className="flex items-center gap-3">
+                                        <p className="font-black text-red-900 text-lg tracking-tight">{item.word}</p>
+                                        <button 
+                                            onClick={() => play(item.word)} 
+                                            className={`p-2 rounded-full transition-all active:scale-90 ${playing === item.word ? 'bg-red-100 text-red-600' : 'bg-slate-100 text-slate-400 group-hover:bg-red-50 group-hover:text-red-300'}`}
+                                        >
+                                            <Volume2 size={16} className={playing === item.word ? 'animate-pulse' : ''} />
+                                        </button>
+                                    </div>
+                                    <p className="text-xs text-slate-500 italic mt-1 font-medium tracking-tight">"{item.simplified}"</p>
+                                </div>
+                                <div className="text-right ml-4">
+                                    <p className="text-[10px] font-black text-slate-500 bg-slate-100 px-3 py-1 rounded-full uppercase border border-slate-200 tracking-tighter">{item.meaning}</p>
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -457,9 +592,12 @@ Terminamos frente al Arco de Constantino. Imagina el rugido de 50.000 espectador
 
             return (
                 <div className="flex flex-col h-screen bg-slate-50 overflow-hidden">
-                    <header className="bg-red-950 text-white p-4 shadow-xl z-20 flex justify-between items-center">
-                        <div className="flex items-center"><Anchor className="mr-3 text-red-500" size={24} /><div><h1 className="font-black text-[10px] uppercase tracking-widest text-red-400">Escala Roma</h1><p className="text-[12px] font-bold">16 Abril 2026</p></div></div>
-                        <div className="text-right"><span className="text-[8px] font-black uppercase text-red-500">Cuenta atrás</span><div className="text-lg font-black font-mono text-red-400">{countdown}</div></div>
+                    <header className="bg-red-950 text-white p-4 shadow-xl z-20 flex justify-between items-center shrink-0">
+                        <div className="flex items-center"><Anchor className="mr-3 text-red-500" size={24} /><div><h1 className="font-black text-[10px] uppercase tracking-[0.2em] text-red-400">Escala Roma</h1><p className="text-[12px] font-bold text-white/90 leading-tight">16 Abril 2026</p></div></div>
+                        <div className="text-right shrink-0">
+                            <span className="text-[8px] font-black uppercase text-red-500 tracking-widest block mb-0.5">Cuenta atrás</span>
+                            <div className="text-lg font-black font-mono text-red-400 leading-none">{countdown}</div>
+                        </div>
                     </header>
                     <main className="flex-1 relative overflow-hidden">
                         {activeTab === 'timeline' && <div className="h-full overflow-y-auto no-scrollbar"><Timeline itinerary={itinerary} onToggleComplete={(id) => setItinerary(itinerary.map(a => a.id === id ? {...a, completed: !a.completed} : a))} onLocate={c => {setMapFocus(c); setActiveTab('map');}} userLocation={userLocation} onOpenAudioGuide={setAudioActivity} /></div>}
@@ -469,13 +607,13 @@ Terminamos frente al Arco de Constantino. Imagina el rugido de 50.000 espectador
                     </main>
                     {audioActivity && (
                       <div className="fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-                        <div className="bg-white rounded-[2.5rem] w-full max-w-lg overflow-hidden flex flex-col max-h-[85vh]">
-                          <div className="p-6 bg-red-950 text-white flex justify-between items-center">
-                            <div className="flex items-center gap-3"><Headphones size={24}/><h2 className="font-bold text-lg">{audioActivity.title}</h2></div>
-                            <button onClick={() => { window.speechSynthesis.cancel(); setAudioActivity(null); setIsPlaying(false); }}><X /></button>
+                        <div className="bg-white rounded-[2.5rem] w-full max-w-lg overflow-hidden flex flex-col max-h-[85vh] shadow-2xl border-4 border-white/20">
+                          <div className="p-6 bg-red-950 text-white flex justify-between items-center shrink-0">
+                            <div className="flex items-center gap-3"><Headphones size={24} className="text-red-400"/><h2 className="font-bold text-lg leading-tight">{audioActivity.title}</h2></div>
+                            <button onClick={() => { window.speechSynthesis.cancel(); setAudioActivity(null); setIsPlaying(false); }} className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"><X size={20}/></button>
                           </div>
-                          <div className="p-8 overflow-y-auto text-sm italic">"{audioActivity.audioGuideText}"</div>
-                          <div className="p-8 bg-slate-50 flex items-center gap-6">
+                          <div className="p-8 overflow-y-auto text-sm italic text-slate-700 leading-relaxed font-medium">"{audioActivity.audioGuideText}"</div>
+                          <div className="p-8 bg-slate-50 flex items-center gap-6 shrink-0">
                             <button onClick={() => { 
                                 if (isPlaying) { window.speechSynthesis.cancel(); setIsPlaying(false); }
                                 else { 
@@ -483,23 +621,24 @@ Terminamos frente al Arco de Constantino. Imagina el rugido de 50.000 espectador
                                     ut.lang = 'es-ES'; ut.onend = () => setIsPlaying(false);
                                     window.speechSynthesis.speak(ut); setIsPlaying(true);
                                 }
-                            }} className={`w-16 h-16 rounded-full flex items-center justify-center ${isPlaying ? 'bg-red-100 text-red-600' : 'bg-red-800 text-white'}`}>
-                                {isPlaying ? <Square size={24} /> : <Play size={24} className="ml-1" />}
+                            }} className={`w-16 h-16 rounded-full flex items-center justify-center shadow-xl transition-all active:scale-90 ${isPlaying ? 'bg-red-100 text-red-600' : 'bg-red-800 text-white'}`}>
+                                {isPlaying ? <Square size={24} fill="currentColor"/> : <Play size={24} fill="currentColor" className="ml-1" />}
                             </button>
+                            <p className="text-[10px] font-black uppercase text-slate-400 tracking-[0.2em]">{isPlaying ? 'Reproduciendo audio...' : 'Pulsa para reproducir'}</p>
                           </div>
                         </div>
                       </div>
                     )}
-                    <nav className="bg-white border-t h-20 flex justify-around items-center px-4 pb-safe shrink-0">
+                    <nav className="bg-white border-t h-20 flex justify-around items-center px-2 pb-safe shrink-0 shadow-[0_-4px_20px_rgba(0,0,0,0.03)] z-30">
                         {[
                           { id: 'timeline', icon: CalendarClock, label: 'Itinerario' },
                           { id: 'map', icon: MapIcon, label: 'Mapa' },
                           { id: 'budget', icon: Wallet, label: 'Gastos' },
                           { id: 'guide', icon: BookOpen, label: 'Guía' }
                         ].map(t => (
-                          <button key={t.id} onClick={() => setActiveTab(t.id)} className={`flex flex-col items-center w-full ${activeTab === t.id ? 'text-red-800' : 'text-slate-400'}`}>
-                            <div className={`p-2 rounded-xl mb-1 ${activeTab === t.id ? 'bg-red-50' : ''}`}><t.icon size={22} /></div>
-                            <span className="text-[9px] font-black uppercase tracking-widest">{t.label}</span>
+                          <button key={t.id} onClick={() => setActiveTab(t.id)} className={`flex flex-col items-center w-full transition-colors ${activeTab === t.id ? 'text-red-800' : 'text-slate-300'}`}>
+                            <div className={`p-2 rounded-2xl mb-1 ${activeTab === t.id ? 'bg-red-50 shadow-sm' : ''}`}><t.icon size={22} /></div>
+                            <span className={`text-[9px] font-black uppercase tracking-[0.1em] ${activeTab === t.id ? 'opacity-100' : 'opacity-60'}`}>{t.label}</span>
                           </button>
                         ))}
                     </nav>
