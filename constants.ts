@@ -257,7 +257,7 @@ export const INITIAL_ITINERARY: Activity[] = [
       coords: COORDS.TREVI, 
       description: 'Leyenda: Lanza una moneda de espaldas con la mano derecha sobre el hombro izquierdo para asegurar tu regreso.', 
       keyDetails: 'Normativa: Sé respetuoso; está prohibido sentarse en el mármol o comer cerca del agua.', 
-      priceEUR: 0, 
+      priceEUR: 2, 
       type: 'sightseeing', 
       completed: false 
     },
@@ -429,7 +429,7 @@ export const PRONUNCIATIONS: Pronunciation[] = [
     { word: 'Per favore', phonetic: "Per fa-vo-re", simplified: 'Per fa-vo-re', meaning: 'Por favor' },
     { word: 'Scusi', phonetic: "Sku-zee", simplified: 'Escusi', meaning: 'Disculpe / Perdón' },
     { word: 'Quanto costa?', phonetic: "Kwan-to kos-ta", simplified: 'Kwan-to kos-ta', meaning: '¿Cuánto cuesta?' },
-    { word: 'Dov\'è il bagno?', phonetic: "Do-ve il ba-nyo", simplified: 'Dové il baño', meaning: '¿Dónde está el baño?' },
+    { word: 'Dov\'è il bagno?', phonetic: "Do-ve il ba-nyo", simplified: 'Dové il bagno', meaning: '¿Dónde está el baño?' },
     { word: 'Il conto, per favore', phonetic: "Il kon-to, per fa-vo-re", simplified: 'Il conto, por favor', meaning: 'La cuenta, por favor' },
     { word: 'Parla spagnolo?', phonetic: "Par-la spa-nyo-lo", simplified: 'Parla spañolo', meaning: '¿Habla español?' },
     { word: 'Non capisco', phonetic: "Non ka-pee-sko", simplified: 'Non capisco', meaning: 'No entiendo' },
