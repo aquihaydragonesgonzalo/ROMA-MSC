@@ -106,7 +106,8 @@
             Headphones, X, Play, Square, Navigation, CheckCircle2, 
             Circle, MapPin, AlertTriangle, Clock, ExternalLink, AlertCircle,
             Send, Volume2, Languages, PhoneCall, Thermometer, TrendingDown, Info, ArrowRight,
-            Sun, Cloud, CloudRain, CloudLightning, Snowflake, Wind, Calendar, ChevronRight
+            Sun, Cloud, CloudRain, CloudLightning, Snowflake, Wind, Calendar, ChevronRight,
+            Compass, Footprints, TrainFront, Ship
         } from 'lucide-react';
         import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
@@ -266,7 +267,7 @@ Desde este balcón natural, tienes el Foro Romano a tus pies. Puedes ver el Arco
             { word: 'Per favore', phonetic: "Per fa-vo-re", simplified: 'Per fa-vo-re', meaning: 'Por favor' },
             { word: 'Scusi', phonetic: "Sku-zee", simplified: 'Escusi', meaning: 'Disculpe / Perdón' },
             { word: 'Quanto costa?', phonetic: "Kwan-to kos-ta", simplified: 'Kwan-to kos-ta', meaning: '¿Cuánto cuesta?' },
-            { word: 'Dov\'è il bagno?', phonetic: "Do-ve il ba-nyo", simplified: 'Dové il bagno', meaning: '¿Dónde está el baño?' },
+            { word: 'Dov\'è il baño?', phonetic: "Do-ve il ba-nyo", simplified: 'Dové il baño', meaning: '¿Dónde está el baño?' },
             { word: 'Il conto, per favore', phonetic: "Il kon-to, per fa-vo-re", simplified: 'Il conto, por favor', meaning: 'La cuenta, por favor' },
             { word: 'Parla spagnolo?', phonetic: "Par-la spa-nyo-lo", simplified: 'Parla spañolo', meaning: '¿Habla español?' },
             { word: 'Non capisco', phonetic: "Non ka-pee-sko", simplified: 'Non capisco', meaning: 'No entiendo' },
@@ -384,8 +385,8 @@ Desde este balcón natural, tienes el Foro Romano a tus pies. Puedes ver el Arco
                                 <div className="bg-slate-50 p-3 rounded-xl text-sm italic border-l-4 border-red-500 mb-4 shadow-inner text-slate-700 font-medium">"{act.keyDetails}"</div>
                                 {act.contingencyNote && <div className="bg-amber-100 border-2 border-amber-400 rounded-2xl p-4 my-4 flex items-start gap-3 shadow-md animate-pulse"><AlertCircle className="text-amber-700 flex-shrink-0 mt-1" size={20} /><div><p className="text-[11px] font-black text-amber-900 uppercase tracking-tighter mb-1">⚠️ PLAN DE CONTINGENCIA</p><p className="text-xs text-amber-950 font-bold leading-snug">{act.contingencyNote}</p></div></div>}
                                 <div className="flex flex-wrap items-center gap-2 mt-3 pt-4 border-t border-slate-50">
-                                    <button onClick={() => onLocate(act.coords)} className="flex items-center text-[10px] font-bold text-red-700 bg-red-50 px-3 py-2 rounded-xl border border-red-100 shadow-sm"><Navigation size={12} className="mr-1.5" /> UBICACIÓN</button>
-                                    {act.audioGuideText && <button onClick={() => onOpenAudioGuide(act)} className="flex items-center text-[10px] font-bold text-white bg-red-800 px-3 py-2 rounded-xl shadow-md"><Headphones size={12} className="mr-1.5" /> AUDIOGUÍA</button>}
+                                    <button onClick={() => onLocate(act.coords)} className="flex items-center text-[10px] font-bold text-fjord-700 bg-red-50 px-3 py-2 rounded-xl border border-red-100 shadow-sm"><Navigation size={12} className="mr-1.5" /> UBICACIÓN</button>
+                                    {act.audioGuideText && <button onClick={() => onOpenAudioGuide(act)} className="flex items-center text-[10px] font-bold text-white bg-fjord-800 px-3 py-2 rounded-xl shadow-md"><Headphones size={12} className="mr-1.5" /> AUDIOGUÍA</button>}
                                     {act.googleMapsUrl && <a href={act.googleMapsUrl} target="_blank" className="flex items-center text-[10px] font-bold text-white bg-emerald-600 px-3 py-2 rounded-xl"><ExternalLink size={12} className="mr-1.5" /> GOOGLE MAPS</a>}
                                     <button onClick={() => onToggleComplete(act.id)} className={`ml-auto px-3 py-2 rounded-xl text-[10px] font-bold uppercase transition-all ${act.completed ? 'bg-emerald-100 text-emerald-700' : 'bg-red-800 text-white'}`}>{act.completed ? 'Hecho' : 'Check'}</button>
                                 </div>
@@ -410,7 +411,7 @@ Desde este balcón natural, tienes el Foro Romano a tus pies. Puedes ver el Arco
                 const map = L.map(mapContainerRef.current, { zoomControl: false }).setView([41.8902, 12.4922], 14);
                 L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png').addTo(map);
                 mapInstanceRef.current = map;
-                return () => { map.remove(); mapInstanceRef.current = null; };
+                return () => { if(mapInstanceRef.current) { mapInstanceRef.current.remove(); mapInstanceRef.current = null; } };
             }, []);
 
             useEffect(() => {
@@ -456,13 +457,12 @@ Desde este balcón natural, tienes el Foro Romano a tus pies. Puedes ver el Arco
         };
 
         const Budget = ({ itinerary }) => {
-            const [currency, setCurrency] = useState('EUR');
             const total = itinerary.reduce((acc, curr) => acc + curr.priceEUR, 0);
             return (
                 <div className="pb-24 px-4 pt-6 max-w-lg mx-auto h-full overflow-y-auto no-scrollbar">
-                    <div className="flex justify-between items-center mb-6"><h2 className="text-2xl font-bold text-red-800 flex items-center"><Wallet className="mr-2" /> Presupuesto</h2></div>
-                    <div className="bg-red-800 rounded-2xl p-6 text-white shadow-lg mb-8">
-                        <p className="text-red-100 text-sm uppercase mb-1">Total Estimado</p>
+                    <div className="flex justify-between items-center mb-6"><h2 className="text-2xl font-bold text-fjord-800 flex items-center"><Wallet className="mr-2" /> Presupuesto</h2></div>
+                    <div className="bg-fjord-800 rounded-2xl p-6 text-white shadow-lg mb-8">
+                        <p className="text-fjord-100 text-sm uppercase mb-1">Total Estimado</p>
                         <div className="text-4xl font-bold">€{total}</div>
                         <p className="text-xs mt-2 italic opacity-80">Incluye BIRG Ticket (12€) y otros buses.</p>
                     </div>
@@ -520,8 +520,63 @@ Desde este balcón natural, tienes el Foro Romano a tus pies. Puedes ver el Arco
 
             return (
                 <div className="pb-32 px-4 pt-6 max-w-lg mx-auto h-full overflow-y-auto no-scrollbar">
-                    <h2 className="text-2xl font-bold text-red-800 mb-6 uppercase tracking-tight">Guía Roma</h2>
+                    <h2 className="text-2xl font-bold text-fjord-800 mb-6 uppercase tracking-tight">Guía Roma</h2>
                     
+                    {/* RESUMEN DE LA VISITA */}
+                    <div className="mb-8">
+                        <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center uppercase tracking-widest px-1">
+                          <Compass size={20} className="mr-2.5 text-fjord-600"/> Resumen de la Visita
+                        </h3>
+                        <div className="bg-white rounded-[2rem] border border-slate-100 shadow-xl p-6 overflow-hidden relative">
+                          <div className="grid grid-cols-2 gap-4 relative z-10">
+                            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 shadow-sm">
+                              <div className="flex items-center gap-2 mb-2">
+                                <Ship size={14} className="text-fjord-700" />
+                                <span className="text-[9px] font-black text-slate-400 uppercase tracking-tighter">Tiempo Puerto</span>
+                              </div>
+                              <p className="text-lg font-black text-slate-800 leading-none">11h 30m</p>
+                              <p className="text-[8px] text-slate-500 font-bold uppercase mt-1">07:00 a 18:30</p>
+                            </div>
+
+                            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 shadow-sm">
+                              <div className="flex items-center gap-2 mb-2">
+                                <TrainFront size={14} className="text-fjord-700" />
+                                <span className="text-[9px] font-black text-slate-400 uppercase tracking-tighter">Transportes</span>
+                              </div>
+                              <p className="text-lg font-black text-slate-800 leading-none">~5h 15m</p>
+                              <p className="text-[8px] text-slate-500 font-bold uppercase mt-1">Total Traslados</p>
+                            </div>
+
+                            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 shadow-sm">
+                              <div className="flex items-center gap-2 mb-2">
+                                <Sun size={14} className="text-fjord-700" />
+                                <span className="text-[9px] font-black text-slate-400 uppercase tracking-tighter">Turismo Real</span>
+                              </div>
+                              <p className="text-lg font-black text-slate-800 leading-none">4h 00m</p>
+                              <p className="text-[8px] text-slate-500 font-bold uppercase mt-1">Exploración</p>
+                            </div>
+
+                            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 shadow-sm">
+                              <div className="flex items-center gap-2 mb-2">
+                                <Footprints size={14} className="text-fjord-700" />
+                                <span className="text-[9px] font-black text-slate-400 uppercase tracking-tighter">Distancia</span>
+                              </div>
+                              <p className="text-lg font-black text-slate-800 leading-none">~6.8 km</p>
+                              <p className="text-[8px] text-slate-500 font-bold uppercase mt-1">Caminata Total</p>
+                            </div>
+                          </div>
+                          <div className="mt-4 pt-4 border-t border-slate-100">
+                             <div className="flex items-start gap-3 bg-red-50/50 p-3 rounded-2xl border border-red-100/50">
+                               <Info size={16} className="text-fjord-700 shrink-0 mt-0.5" />
+                               <p className="text-[10px] text-fjord-900 font-bold leading-normal">
+                                 <span className="uppercase font-black block mb-0.5">Dato de Interés:</span>
+                                 El ticket <span className="underline">BIRG</span> (12€) cubre todos tus trayectos del día: Tren Regional, Metro (Línea B) y Buses Urbanos en Civitavecchia y Roma.
+                               </p>
+                             </div>
+                          </div>
+                        </div>
+                    </div>
+
                     {/* SOS WHATSAPP */}
                     <div className="mb-8 bg-red-600 rounded-[2rem] p-6 shadow-xl text-white relative overflow-hidden">
                         <div className="absolute top-[-20px] right-[-20px] w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
@@ -531,7 +586,7 @@ Desde este balcón natural, tienes el Foro Romano a tus pies. Puedes ver el Arco
                                 <h3 className="font-black text-lg uppercase tracking-widest">SOS WHATSAPP</h3>
                             </div>
                             <p className="text-xs text-red-100 mb-6 leading-relaxed">Envía tu ubicación exacta si necesitas asistencia inmediata o te has desorientado.</p>
-                            <button onClick={handleSOS} className="w-full py-4 bg-white text-red-700 font-black rounded-2xl text-sm uppercase tracking-widest shadow-lg active:scale-95 transition-transform">Enviar SOS</button>
+                            <button onClick={handleSOS} className="w-full py-4 bg-white text-fjord-700 font-black rounded-2xl text-sm uppercase tracking-widest shadow-lg active:scale-95 transition-transform">Enviar SOS</button>
                         </div>
                     </div>
 
@@ -539,7 +594,7 @@ Desde este balcón natural, tienes el Foro Romano a tus pies. Puedes ver el Arco
                     <div className="mb-8">
                         <div className="flex items-center justify-between mb-4 px-1">
                             <h3 className="text-lg font-bold text-slate-800 flex items-center uppercase tracking-widest">
-                                <Thermometer size={20} className="mr-2.5 text-red-600"/> Tiempo en Roma
+                                <Thermometer size={20} className="mr-2.5 text-fjord-600"/> Tiempo en Roma
                             </h3>
                             {!loadingWeather && <div className="flex items-center gap-1 text-[8px] font-black text-slate-400 uppercase tracking-tighter bg-slate-100 px-2 py-0.5 rounded-full">
                                 <ArrowRight size={10} className="animate-bounce-x" /> DESLIZA
@@ -548,16 +603,14 @@ Desde este balcón natural, tienes el Foro Romano a tus pies. Puedes ver el Arco
                         
                         {loadingWeather ? (
                             <div className="p-8 text-center bg-white rounded-3xl border border-slate-100">
-                                <div className="w-6 h-6 border-2 border-red-600 border-t-transparent rounded-full animate-spin mx-auto mb-2"></div>
+                                <div className="w-6 h-6 border-2 border-fjord-600 border-t-transparent rounded-full animate-spin mx-auto mb-2"></div>
                                 <p className="text-xs font-bold text-slate-400 uppercase">Obteniendo datos...</p>
                             </div>
                         ) : (
                             <div className="space-y-4">
-                                {/* Hourly Forecast with Robust Scroll View */}
                                 <div className="bg-white p-2 pb-4 rounded-[2.5rem] border border-slate-100 shadow-lg relative overflow-hidden">
                                     <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
                                     <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
-                                    
                                     <div className="flex overflow-x-auto custom-h-scrollbar gap-3 px-6 py-4 items-stretch">
                                         {weather.hourly.time.map((time, i) => {
                                             const h = new Date(time).getHours();
@@ -573,23 +626,16 @@ Desde este balcón natural, tienes el Foro Romano a tus pies. Puedes ver el Arco
                                             return null;
                                         })}
                                     </div>
-                                    <div className="mt-1 flex justify-center items-center gap-2">
-                                        <div className="h-1 w-8 bg-slate-100 rounded-full"></div>
-                                        <span className="text-[7px] font-black text-slate-300 uppercase tracking-[0.3em]">Pronóstico por horas</span>
-                                        <div className="h-1 w-8 bg-slate-100 rounded-full"></div>
-                                    </div>
                                 </div>
-
-                                {/* 5-Day Summary */}
                                 <div className="bg-white rounded-[2rem] border border-slate-100 shadow-md divide-y divide-slate-50 overflow-hidden">
                                     <div className="p-4 bg-slate-50/50 flex items-center justify-between">
                                         <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest flex items-center gap-2">
-                                            <Calendar size={14} className="text-red-700" /> Próximos 5 días
+                                            <Calendar size={14} className="text-fjord-700" /> Próximos 5 días
                                         </p>
                                     </div>
                                     {weather.daily.time.slice(0,5).map((date, i) => (
                                         <div key={date} className="flex items-center justify-between p-4 hover:bg-slate-50/30 transition-colors">
-                                            <span className="text-xs font-black text-red-800 uppercase w-12">{new Date(date).toLocaleDateString('es-ES', {weekday: 'short'})}</span>
+                                            <span className="text-xs font-black text-fjord-800 uppercase w-12">{new Date(date).toLocaleDateString('es-ES', {weekday: 'short'})}</span>
                                             <div className="flex-1 flex justify-center">
                                                 {getWeatherIcon(weather.daily.weathercode[i], 20)}
                                             </div>
@@ -605,14 +651,14 @@ Desde este balcón natural, tienes el Foro Romano a tus pies. Puedes ver el Arco
                     </div>
 
                     <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center uppercase tracking-widest px-1">
-                        <Languages size={20} className="mr-2.5 text-red-600"/> Italiano Básico
+                        <Languages size={20} className="mr-2.5 text-fjord-600"/> Italiano Básico
                     </h3>
                     <div className="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden mb-12">
                         {PRONUNCIATIONS.map((item, idx) => (
                             <div key={idx} className="p-5 flex justify-between items-center border-b last:border-0 hover:bg-slate-50/50 transition-colors group">
                                 <div>
                                     <div className="flex items-center gap-3">
-                                        <p className="font-black text-red-900 text-lg tracking-tight">{item.word}</p>
+                                        <p className="font-black text-fjord-900 text-lg tracking-tight">{item.word}</p>
                                         <button 
                                             onClick={() => play(item.word)} 
                                             className={`p-2 rounded-full transition-all active:scale-90 ${playing === item.word ? 'bg-red-100 text-red-600' : 'bg-slate-100 text-slate-400 group-hover:bg-red-50 group-hover:text-red-300'}`}

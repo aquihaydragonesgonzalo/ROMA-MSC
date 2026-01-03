@@ -3,7 +3,7 @@ import { PRONUNCIATIONS } from '../constants';
 import { 
   Volume2, Thermometer, AlertCircle, PhoneCall, Send, Languages, 
   Sun, Cloud, CloudRain, CloudLightning, Snowflake, Wind, Calendar,
-  ArrowRight
+  ArrowRight, Info, Compass, Footprints, TrainFront, Ship
 } from 'lucide-react';
 import { Coordinates } from '../types';
 
@@ -97,7 +97,63 @@ const Guide: React.FC<GuideProps> = ({ userLocation }) => {
 
   return (
     <div className="pb-32 px-4 pt-6 max-w-lg mx-auto h-full overflow-y-auto no-scrollbar">
-      <h2 className="text-2xl font-bold text-red-800 mb-6 uppercase tracking-tight">Guía Roma</h2>
+      <h2 className="text-2xl font-bold text-fjord-800 mb-6 uppercase tracking-tight">Guía Roma</h2>
+
+      {/* SUMMARY SECTION */}
+      <div className="mb-8">
+        <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center uppercase tracking-widest px-1">
+          <Compass size={20} className="mr-2.5 text-fjord-600"/> Resumen de la Visita
+        </h3>
+        <div className="bg-white rounded-[2rem] border border-slate-100 shadow-xl p-6 overflow-hidden relative">
+          <div className="grid grid-cols-2 gap-4 relative z-10">
+            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 shadow-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <Ship size={14} className="text-fjord-700" />
+                <span className="text-[9px] font-black text-slate-400 uppercase tracking-tighter">Tiempo Puerto</span>
+              </div>
+              <p className="text-lg font-black text-slate-800 leading-none">11h 30m</p>
+              <p className="text-[8px] text-slate-500 font-bold uppercase mt-1">07:00 a 18:30</p>
+            </div>
+
+            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 shadow-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <TrainFront size={14} className="text-fjord-700" />
+                <span className="text-[9px] font-black text-slate-400 uppercase tracking-tighter">Transportes</span>
+              </div>
+              <p className="text-lg font-black text-slate-800 leading-none">~5h 15m</p>
+              <p className="text-[8px] text-slate-500 font-bold uppercase mt-1">Total Traslados</p>
+            </div>
+
+            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 shadow-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <Sun size={14} className="text-fjord-700" />
+                <span className="text-[9px] font-black text-slate-400 uppercase tracking-tighter">Turismo Real</span>
+              </div>
+              <p className="text-lg font-black text-slate-800 leading-none">4h 00m</p>
+              <p className="text-[8px] text-slate-500 font-bold uppercase mt-1">Exploración</p>
+            </div>
+
+            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 shadow-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <Footprints size={14} className="text-fjord-700" />
+                <span className="text-[9px] font-black text-slate-400 uppercase tracking-tighter">Distancia</span>
+              </div>
+              <p className="text-lg font-black text-slate-800 leading-none">~6.8 km</p>
+              <p className="text-[8px] text-slate-500 font-bold uppercase mt-1">Caminata Total</p>
+            </div>
+          </div>
+          
+          <div className="mt-4 pt-4 border-t border-slate-100">
+             <div className="flex items-start gap-3 bg-red-50/50 p-3 rounded-2xl border border-red-100/50">
+               <Info size={16} className="text-fjord-700 shrink-0 mt-0.5" />
+               <p className="text-[10px] text-fjord-900 font-bold leading-normal">
+                 <span className="uppercase font-black block mb-0.5">Dato de Interés:</span>
+                 El ticket <span className="underline">BIRG</span> (12€) cubre todos tus trayectos del día: Tren Regional, Metro (Línea B) y Buses Urbanos en Civitavecchia y Roma.
+               </p>
+             </div>
+          </div>
+        </div>
+      </div>
 
       {/* SOS SECTION */}
       <div className="mb-8 bg-red-600 rounded-[2rem] p-6 shadow-xl shadow-red-900/20 text-white relative overflow-hidden">
@@ -114,7 +170,7 @@ const Guide: React.FC<GuideProps> = ({ userLocation }) => {
           </p>
           <button 
             onClick={handleSOS}
-            className="w-full py-4 bg-white text-red-700 font-black rounded-2xl flex items-center justify-center gap-2 active:scale-95 transition-transform shadow-lg uppercase tracking-widest text-sm"
+            className="w-full py-4 bg-white text-fjord-700 font-black rounded-2xl flex items-center justify-center gap-2 active:scale-95 transition-transform shadow-lg uppercase tracking-widest text-sm"
           >
             <Send size={18} />
             Enviar SOS por WhatsApp
@@ -126,7 +182,7 @@ const Guide: React.FC<GuideProps> = ({ userLocation }) => {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-4 px-1">
           <h3 className="text-lg font-bold text-slate-800 flex items-center uppercase tracking-widest">
-            <Thermometer size={20} className="mr-2.5 text-red-600"/> Tiempo en Roma
+            <Thermometer size={20} className="mr-2.5 text-fjord-600"/> Tiempo en Roma
           </h3>
           {!loadingWeather && <div className="flex items-center gap-1 text-[8px] font-black text-slate-400 uppercase tracking-tighter bg-slate-100 px-2 py-0.5 rounded-full">
             <ArrowRight size={10} className="animate-pulse" /> DESLIZA
@@ -135,7 +191,7 @@ const Guide: React.FC<GuideProps> = ({ userLocation }) => {
         
         {loadingWeather ? (
           <div className="bg-white rounded-3xl p-8 shadow-md border border-slate-50 flex flex-col items-center">
-            <div className="w-8 h-8 border-4 border-red-600 border-t-transparent rounded-full animate-spin mb-4"></div>
+            <div className="w-8 h-8 border-4 border-fjord-600 border-t-transparent rounded-full animate-spin mb-4"></div>
             <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Cargando Clima...</p>
           </div>
         ) : (
@@ -171,7 +227,7 @@ const Guide: React.FC<GuideProps> = ({ userLocation }) => {
             <div className="bg-white rounded-[2rem] border border-slate-100 shadow-md overflow-hidden">
               <div className="p-4 border-b border-slate-50 bg-slate-50/50 flex items-center justify-between">
                 <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest flex items-center gap-2">
-                  <Calendar size={14} className="text-red-700" /> Próximos 5 días
+                  <Calendar size={14} className="text-fjord-700" /> Próximos 5 días
                 </p>
               </div>
               <div className="divide-y divide-slate-50">
@@ -182,7 +238,7 @@ const Guide: React.FC<GuideProps> = ({ userLocation }) => {
                   return (
                     <div key={date} className="flex items-center justify-between p-4 hover:bg-slate-50/30 transition-colors">
                       <div className="flex items-center gap-3 w-20">
-                        <span className="text-xs font-black text-red-800 uppercase">{dayName}</span>
+                        <span className="text-xs font-black text-fjord-800 uppercase">{dayName}</span>
                         <span className="text-xs font-bold text-slate-400">{dayNum}</span>
                       </div>
                       <div className="flex-1 flex justify-center">
@@ -201,28 +257,16 @@ const Guide: React.FC<GuideProps> = ({ userLocation }) => {
         )}
       </div>
 
-      {/* Tips */}
-      <div className="grid grid-cols-1 gap-4 mb-8">
-        <div className="bg-white p-6 rounded-3xl border border-slate-100 shadow-md">
-          <div className="flex items-center mb-3 text-red-800 font-black text-xs uppercase tracking-widest">
-             <AlertCircle size={16} className="mr-2 text-red-600"/> Reserva Online
-          </div>
-          <p className="text-sm text-slate-600 font-medium leading-relaxed">
-            Reserva tickets (tren, Coliseo) online con antelación. Roma está saturada en 2026.
-          </p>
-        </div>
-      </div>
-
       {/* Pronunciation Table */}
       <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center uppercase tracking-widest px-1">
-        <Languages size={20} className="mr-2.5 text-red-600"/> Italiano Básico
+        <Languages size={20} className="mr-2.5 text-fjord-600"/> Italiano Básico
       </h3>
       <div className="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden mb-8">
         {PRONUNCIATIONS.map((item, idx) => (
           <div key={item.word} className={`p-5 flex justify-between items-center group ${idx !== PRONUNCIATIONS.length - 1 ? 'border-b border-slate-50' : ''} hover:bg-slate-50/50 transition-colors`}>
             <div>
               <div className="flex items-center gap-3">
-                <p className="font-black text-red-900 text-lg tracking-tight">{item.word}</p>
+                <p className="font-black text-fjord-900 text-lg tracking-tight">{item.word}</p>
                 <button 
                   onClick={() => playSimulatedAudio(item.word)}
                   className={`p-2 rounded-full transition-all active:scale-90 ${playing === item.word ? 'bg-red-100 text-red-600 shadow-inner' : 'bg-slate-100 text-slate-400 group-hover:bg-red-50 group-hover:text-red-400'}`}
