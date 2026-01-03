@@ -207,6 +207,28 @@ Para terminar, mira el suelo que rodea el arco. Por aquí pasaba la Vía Triumph
 
 Es el lugar exacto donde la gloria militar se convertía en leyenda eterna.`;
 
+        const LOBA_CAPITULINA_AUDIO_TEXT = `¡Bienvenido a la Loba Capitolina!
+
+1. El Símbolo de la Eternidad
+Mira la silueta de bronce recortada contra el cielo romano. Esta loba, conocida como Luperca, es mucho más que una estatua; es el emblema de la ciudad. Verás a una loba alerta, con las orejas tiesas y la mirada fija, mientras protege a dos bebés que se alimentan de ella.
+
+Dato de experto: Lo que ves aquí es una réplica exacta. La loba original, de bronce fundido, se custodia a pocos metros de donde estás, dentro de los Museos Capitolinos. Durante siglos se creyó que era una obra etrusca del siglo V a.C., aunque estudios recientes de carbono-14 sugieren que el cuerpo de la loba podría ser de la Edad Media.
+
+2. La Leyenda de la Fundación
+Cierra los ojos un momento e imagina el río Tíber hace 2.800 años. La leyenda cuenta que el dios Marte dejó embarazada a una vestal llamada Rea Silvia. Sus hijos gemelos, Rómulo y Remo, fueron arrojados al río en una cesta para evitar que fueran asesinados por su tío, el rey Amulio.
+
+La cesta quedó varada en la orilla, a los pies de esta misma colina, y fue allí donde la loba los encontró. En lugar de devorarlos, los amamantó como si fueran sus propios cachorros hasta que un pastor los rescató.
+
+Los Gemelos: Si te fijas bien, los bebés tienen un estilo artístico diferente al de la loba. Eso es porque fueron añadidos mucho después, a finales del siglo XV, por el artista renacentista Antonio del Pollaiolo.
+
+3. SPQR: El rastro de la Loba
+Si miras a tu alrededor, verás las siglas S.P.Q.R. (Senatus Populusque Romanus). La loba es la madre de ese pueblo. Para los antiguos romanos, descender de una fiera y de un dios (Marte) era la justificación perfecta para su destino de conquistar el mundo.
+
+4. El "Mirador Secreto"
+Ahora, haz un giro de 180 grados y dale la espalda a la loba. Lo que tienes frente a ti es, posiblemente, la mejor vista gratuita de Roma.
+
+Desde este balcón natural, tienes el Foro Romano a tus pies. Puedes ver el Arco de Septimio Severo a la izquierda, las columnas del Templo de Saturno y, al fondo, la silueta del Coliseo de donde venimos caminando. Es el lugar donde el mito (la loba) se encuentra con la realidad histórica (las ruinas).`;
+
         const INITIAL_ITINERARY = [
             { id: '1', title: 'Llegada a Puerto', startTime: '07:00', endTime: '07:00', locationName: 'Muelle Civitavecchia', coords: COORDS.CIVITAVECCHIA_DOCK, description: 'Logística: El barco atraca en el muelle de Civitavecchia. Sé de los primeros en la cubierta 0 para evitar las colas masivas de desembarque.', keyDetails: 'Civitavecchia fue el puerto histórico de Roma desde el siglo II (fundado por Trajano como Centumcellae).', priceEUR: 0, type: 'logistics', completed: false },
             { id: '2', title: 'Shuttle a Largo della Pace', startTime: '07:15', endTime: '07:40', locationName: 'Muelle', endLocationName: 'Largo della Pace', coords: COORDS.CIVITAVECCHIA_DOCK, endCoords: COORDS.LARGODELAPACE, description: 'Logística: Toma el Shuttle Bus gratuito. Te dejará en el centro de servicios de Largo della Pace.', keyDetails: 'Consejo: Ten a mano tus documentos de identidad y tarjeta del crucero.', priceEUR: 0, type: 'transport', completed: false },
@@ -217,7 +239,7 @@ Es el lugar exacto donde la gloria militar se convertía en leyenda eterna.`;
             { id: '7', title: 'Arco de Constantino', startTime: '10:30', endTime: '10:55', locationName: 'Arco di Costantino', coords: COORDS.ARCO_CONSTANTINO, description: 'Dato Histórico: Erigido en el 315 d.C. para celebrar la victoria en la batalla del Puente Milvio.', keyDetails: 'Es un "museo al aire libre" porque utiliza relieves reciclados de otros monumentos (técnica "spolia").', priceEUR: 0, type: 'sightseeing', completed: false, audioGuideText: ARCO_CONSTANTINO_AUDIO_TEXT },
             { id: '8', title: 'Via dei Fori Imperiali (Tramo I)', startTime: '10:55', endTime: '11:10', locationName: 'Via dei Fori Imperiali', coords: COORDS.FORI_IMPERIALI, description: 'Esta avenida fue trazada por Mussolini. A la izquierda verás los Foros de Augusto y Nerva.', keyDetails: 'Mira hacia abajo para ver los mapas de mármol que muestran la expansión del Imperio Romano.', priceEUR: 0, type: 'sightseeing', completed: false },
             { id: '9', title: 'Via dei Fori Imperiali (Tramo II)', startTime: '11:10', endTime: '11:20', locationName: 'Via dei Fori Imperiali', coords: COORDS.FORI_IMPERIALI, description: 'Al final de la calle verás el Foro de Trajano con su famosa columna de 30 metros de altura.', keyDetails: 'La columna narra las guerras contra los dacios en un bajorrelieve en espiral único.', priceEUR: 0, type: 'sightseeing', completed: false },
-            { id: '10', title: 'Loba Capitolina', startTime: '11:20', endTime: '11:30', locationName: 'Campidoglio', coords: COORDS.CAMPIDOGLIO, description: 'Dato Histórico: La Lupa Capitolina amamantando a Rómulo y Remo es el símbolo de la fundación de la ciudad (753 a.C.).', keyDetails: 'La que verás en la calle es una copia; la original de bronce está en los Museos Capitolinos.', priceEUR: 0, type: 'sightseeing', completed: false },
+            { id: '10', title: 'Loba Capitolina', startTime: '11:20', endTime: '11:30', locationName: 'Campidoglio', coords: COORDS.CAMPIDOGLIO, description: 'Dato Histórico: La Lupa Capitolina amamantando a Rómulo y Remo es el símbolo de la fundación de la ciudad (753 a.C.).', keyDetails: 'La que verás en la calle es una copia; la original de bronce está en los Museos Capitolinos.', priceEUR: 0, type: 'sightseeing', completed: false, audioGuideText: LOBA_CAPITULINA_AUDIO_TEXT },
             { id: '11', title: 'Plaza del Campidoglio', startTime: '11:30', endTime: '11:40', locationName: 'Piazza del Campidoglio', coords: COORDS.CAMPIDOGLIO, description: 'Dato Artístico: Diseñada por Miguel Ángel en el siglo XVI. Fíjate en el diseño geométrico del suelo.', keyDetails: 'La estatua ecuestre de Marco Aurelio en el centro es una copia fiel de la original.', priceEUR: 0, type: 'sightseeing', completed: false },
             { id: '12', title: 'Coloso de Constantino', startTime: '11:40', endTime: '11:50', locationName: 'Museos Capitolinos', coords: COORDS.CAMPIDOGLIO, description: 'Dato Histórico: En el patio de los museos (visible desde fuera) están los restos de una estatua de 12 metros.', keyDetails: 'Solo su cabeza mide 2.6 metros de altura.', priceEUR: 0, type: 'sightseeing', completed: false },
             { id: '13', title: 'Monumento a Víctor Manuel II', startTime: '11:50', endTime: '12:00', locationName: 'Piazza Venezia', coords: COORDS.VITTORIANO, description: 'Curiosidad: Conocido por los romanos como "La Máquina de Escribir" o "La Tarta de Bodas".', keyDetails: 'Alberga la tumba del Soldado Desconocido y ofrece de las mejores vistas de la ciudad.', priceEUR: 0, type: 'sightseeing', completed: false },
@@ -365,7 +387,7 @@ Es el lugar exacto donde la gloria militar se convertía en leyenda eterna.`;
                                     <button onClick={() => onLocate(act.coords)} className="flex items-center text-[10px] font-bold text-red-700 bg-red-50 px-3 py-2 rounded-xl border border-red-100 shadow-sm"><Navigation size={12} className="mr-1.5" /> UBICACIÓN</button>
                                     {act.audioGuideText && <button onClick={() => onOpenAudioGuide(act)} className="flex items-center text-[10px] font-bold text-white bg-red-800 px-3 py-2 rounded-xl shadow-md"><Headphones size={12} className="mr-1.5" /> AUDIOGUÍA</button>}
                                     {act.googleMapsUrl && <a href={act.googleMapsUrl} target="_blank" className="flex items-center text-[10px] font-bold text-white bg-emerald-600 px-3 py-2 rounded-xl"><ExternalLink size={12} className="mr-1.5" /> GOOGLE MAPS</a>}
-                                    <button onClick={() => onToggleComplete(act.id)} className={`ml-auto px-3 py-2 rounded-xl text-[10px] font-bold uppercase transition-all ${act.completed ? 'Hecho' : 'Check'}`}>{act.completed ? 'Hecho' : 'Check'}</button>
+                                    <button onClick={() => onToggleComplete(act.id)} className={`ml-auto px-3 py-2 rounded-xl text-[10px] font-bold uppercase transition-all ${act.completed ? 'bg-emerald-100 text-emerald-700' : 'bg-red-800 text-white'}`}>{act.completed ? 'Hecho' : 'Check'}</button>
                                 </div>
                             </div>
                         </div>
