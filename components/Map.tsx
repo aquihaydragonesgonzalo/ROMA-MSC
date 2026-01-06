@@ -76,24 +76,34 @@ const MapComponent: React.FC<MapProps> = ({ activities, userLocation, focusedLoc
         icon: act.audioGuideText ? audioIcon : defaultIcon 
       }).addTo(map);
       
+      const navUrl = act.googleMapsUrl || `https://www.google.com/maps/dir/?api=1&destination=${act.coords.lat},${act.coords.lng}`;
+
       let popupContent = `
-        <div style="padding: 12px; min-width: 180px; font-family: 'Roboto Condensed', sans-serif;">
-          <h3 style="margin: 0 0 4px 0; font-weight: bold; color: #7f1d1d; font-size: 14px;">${act.title}</h3>
-          <p style="margin: 0 0 12px 0; font-size: 11px; color: #64748b;">${act.locationName}</p>`;
+        <div style="padding: 12px; min-width: 220px; font-family: 'Roboto Condensed', sans-serif;">
+          <h3 style="margin: 0 0 4px 0; font-weight: bold; color: #7f1d1d; font-size: 15px; text-transform: uppercase;">${act.title}</h3>
+          <p style="margin: 0 0 8px 0; font-size: 11px; color: #64748b; font-weight: bold; border-bottom: 1px solid #f1f5f9; padding-bottom: 4px;">${act.locationName}</p>
+          <p style="margin: 0 0 12px 0; font-size: 12px; color: #334155; line-height: 1.4;">${act.description}</p>
+          
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="${navUrl}" target="_blank" style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; background: #059669; color: white; padding: 10px; border-radius: 10px; font-weight: bold; font-size: 11px; box-shadow: 0 2px 4px rgba(5, 150, 105, 0.2);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+              CÓMO LLEGAR
+            </a>
+      `;
       
       if (act.audioGuideText) {
         popupContent += `
           <button 
             onclick="window.openAudioGuideFromMap('${act.id}')"
-            style="width: 100%; background: #991B1B; color: white; border: none; padding: 10px; border-radius: 10px; font-weight: bold; font-size: 11px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); active:transform: scale(0.98);">
+            style="width: 100%; background: #991B1B; color: white; border: none; padding: 10px; border-radius: 10px; font-weight: bold; font-size: 11px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 2px 4px rgba(153, 27, 27, 0.2);">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
               <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
             </svg>
-            REPRODUCIR AUDIOGUÍA
+            ESCUCHAR AUDIOGUÍA
           </button>`;
       }
-      popupContent += `</div>`;
+      popupContent += `</div></div>`;
       
       marker.bindPopup(popupContent);
       layersRef.current.push(marker);
