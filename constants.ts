@@ -210,11 +210,12 @@ export const INITIAL_ITINERARY: Activity[] = [
       endTime: '11:10', 
       locationName: 'Via dei Fori Imperiali', 
       coords: COORDS.FORI_IMPERIALI, 
-      description: 'Esta avenida fue trazada por Mussolini. A la izquierda verás los Foros de Augusto y Nerva.', 
-      keyDetails: 'Mira hacia abajo para ver los mapas de mármol que muestran la expansión del Imperio Romano.', 
+      description: 'Paseo panorámico por el exterior de los Foros de Augusto, Nerva y el Templo de la Paz desde el Coliseo.', 
+      keyDetails: 'A tu izquierda, busca los muros de mármol con mapas que narran la expansión del Imperio Romano.', 
       priceEUR: 0, 
       type: 'sightseeing', 
-      completed: false 
+      completed: false,
+      audioGuideText: 'Comenzamos nuestro paseo por la majestuosa Via dei Fori Imperiali. A tu izquierda, verás los restos de lo que fue el centro administrativo y religioso del mundo antiguo. Esta calle, inaugurada en 1932, cruza literalmente sobre los antiguos foros. Si te fijas en el muro a tu izquierda, verás unos mapas de mármol y bronce que muestran cómo Roma pasó de ser un pequeño punto en el mapa a dominar todo el Mediterráneo. Verás el Foro de Augusto con sus imponentes columnas y el Foro de Nerva, encajado en un espacio más estrecho. Imagina estas plazas cubiertas de mármol blanco, estatuas doradas y gente de todas las provincias del Imperio paseando bajo el sol.'
     },
     { 
       id: '9', 
@@ -223,11 +224,12 @@ export const INITIAL_ITINERARY: Activity[] = [
       endTime: '11:20', 
       locationName: 'Via dei Fori Imperiali', 
       coords: COORDS.FORI_IMPERIALI, 
-      description: 'Al final de la calle verás el Foro de Trajano con su famosa columna de 30 metros de altura.', 
-      keyDetails: 'La columna narra las guerras contra los dacios en un bajorrelieve en espiral único.', 
+      description: 'Continuación del paseo exterior hasta el cruce con la via di San Pietro in Carcere, frente al Foro de Trajano.', 
+      keyDetails: 'Observa la Columna Trajana y el Mercado de Trajano, el primer "centro comercial" de la historia.', 
       priceEUR: 0, 
       type: 'sightseeing', 
-      completed: false 
+      completed: false,
+      audioGuideText: 'Seguimos avanzando hacia el final de la avenida. Pronto verás a tu izquierda el Mercado de Trajano, una impresionante estructura semicircular de ladrillo que albergaba más de 150 tiendas y oficinas; era el corazón comercial de Roma. Justo después, el Foro de Trajano, el más grande y lujoso de todos. Fíjate en la Columna Trajana, una obra maestra que narra, como si fuera un cómic de piedra en espiral, las victorias del emperador. Estamos llegando al cruce estratégico con la Via di San Pietro in Carcere. Aquí es donde abandonaremos la avenida principal para empezar a subir hacia la colina del Capitolio. Mira a tu derecha antes de girar: tienes una vista privilegiada del Foro Romano clásico desde la altura.'
     },
     { 
       id: '10', 
