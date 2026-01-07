@@ -47,7 +47,7 @@ export const GPX_WAYPOINTS = [
 ];
 
 export const ROMAN_WALK_TRACK: [number, number][] = [
-    [41.891218, 12.491383], [41.891155, 12.491916], [41.891097, 12.491915], [41.891072, 12.491915], [41.890944, 12.491915], [41.890966, 12.492103], [41.890971, 12.492242], [41.890964, 12.492358], [41.890942, 12.49252], [41.890906, 12.492744], [41.890846, 12.492954], [41.890749, 12.493175], [41.890571, 12.493529], [41.890501, 12.493629], [41.890429, 12.493694], [41.890307, 12.493741], [41.89016, 12.493717], [41.889967, 12.493622], [41.889848, 12.493564], [41.889879, 12.493453], [41.889834, 12.49337], [41.889742, 12.493263], [41.889634, 12.493107], [41.889568, 12.492974], [41.889523, 12.492806], [41.889471, 12.49242], [41.889487, 12.492192], [41.889472, 12.491963], [41.88952, 12.491793], [41.889599, 12.491572], [41.889613, 12.491548], [41.889739, 12.491349], [41.889867, 12.491208], [41.890029, 12.491132], [41.890183, 12.491101], [41.890307, 12.491094], [41.890431, 12.491109], [41.89051, 12.491131], [41.890649, 12.491204], [41.890763, 12.491309], [41.890837, 12.491412], [41.890885, 12.491499], [41.890913, 12.491437], [41.890913, 12.491437], [41.890922, 12.49142], [41.89099, 12.491177], [41.891059, 12.490929], [41.891098, 12.490779], [41.891203, 12.490416], [41.891262, 12.490453], [41.891285, 12.490382], [41.891319, 12.490307], [41.891614, 12.489782], [41.89175, 12.489541], [41.891777, 12.489494], [41.892009, 12.489079], [41.892476, 12.488249], [41.892494, 12.488267], [41.892538, 12.48831], [41.892713, 12.487955], [41.892929, 12.487574], [41.892965, 12.487492], [41.892991, 12.487407], [41.893042, 12.487289], [41.893077, 12.487226], [41.893161, 12.487074], [41.893291, 12.486887], [41.89347, 12.486677], [41.893734, 12.486316], [41.893883, 12.486048], [41.894083, 12.485696], [41.894604, 12.484746], [41.894515, 12.48461], [41.894516, 12.484606], [41.894515, 12.48461], [41.894279, 12.484288], [41.894211, 12.484232], [41.894167, 12.484212], [41.894083, 12.484188], [41.894039, 12.484183], [41.894036, 12.484165], [41.894024, 12.484055], [41.894017, 12.483988], [41.89401, 12.483921], [41.893775, 12.483897], [41.89372, 12.483872], [41.893655, 12.483823], [41.893482, 12.483648], [41.893393, 12.483578], [41.893391, 12.483576], [41.893417, 12.483511], [41.893418, 12.483493], [41.893408, 12.483471], [41.893356, 12.483432], [41.893306, 12.483236], [41.893261, 12.483061], [41.893221, 12.483007], [41.893206, 12.482927], [41.893225, 12.482857], [41.89327, 12.482804], [41.893328, 12.482789], [41.89331, 12.482641], [41.893291, 12.482477], [41.893255, 12.482428], [41.893198, 12.482366], [41.893091, 12.48224], [41.892987, 12.482104], [41.892818, 12.481859], [41.892648, 12.481544], [41.892584, 12.481452], [41.892547, 12.481412], [41.892489, 12.481431], [41.892448, 12.481444], [41.892489, 12.481431], [41.892547, 12.481412], [41.892584, 12.481452], [41.892648, 12.481544], [41.892818, 12.481859], [41.892987, 12.482104], [41.893091, 12.48224], [41.893198, 12.482366], [41.893255, 12.482428], [41.893291, 12.482477], [41.89331, 12.482641], [41.893378, 12.482629], [41.893403, 12.482634], [41.89345, 12.482661], [41.893472, 12.482612], [41.893776, 12.48196], [41.89378, 12.481954], [41.893821, 12.481986], [41.893838, 12.481984], [41.893862, 12.481982], [41.893941, 12.481987], [41.893943, 12.481997], [41.894316, 12.482148], [41.894525, 12.482249], [41.894551, 12.482245], [41.894583, 12.482271], [41.894605, 12.482303], [41.894624, 12.482274], [41.894649, 12.482263], [41.894655, 12.482283], [41.894913, 12.482179], [41.894952, 12.482167], [41.894988, 12.482166], [41.895044, 12.482169], [41.895083, 12.482181], [41.895154, 12.482218], [41.895183, 12.482242], [41.895241, 12.482312], [41.895287, 12.482403], [41.8953, 12.482443], [41.895337, 12.482433], [41.895365, 12.482447], [41.895374, 12.482461], [41.895397, 12.482556], [41.895441, 12.482741], [41.895472, 12.482871], [41.895496, 12.482968], [41.895493, 12.483003], [41.89551, 12.48301], [41.895556, 12.483025], [41.895727, 12.483108], [41.895742, 12.483115], [41.895753, 12.483076], [41.895766, 12.483057], [41.895965, 12.482962], [41.895974, 12.482994], [41.895985, 12.482988], [41.896012, 12.482973], [41.896041, 12.482957], [41.896053, 12.482951], [41.896047, 12.482929], [41.896099, 12.482902], [41.896639, 12.482657], [41.896665, 12.48266], [41.896715, 12.482956], [41.89677, 12.48335], [41.896777, 12.483385], [41.896884, 12.483348], [41.897037, 12.483359], [41.897111, 12.48334], [41.897656, 12.483081], [41.898438, 12.482743], [41.89846, 12.482829], [41.898495, 12.482925], [41.898603, 12.483157], [41.898934, 12.483082], [41.899264, 12.482985], [41.899617, 12.482842], [41.900185, 12.482578], [41.900438, 12.482469], [41.900481, 12.48245], [41.900509, 12.482481], [41.900567, 12.482722], [41.900724, 12.483129], [41.900713, 12.483133], [41.900724, 12.483129], [41.900567, 12.482722], [41.900509, 12.482481], [41.900481, 12.48245], [41.900433, 12.482309], [41.900327, 12.481816], [41.900132, 12.480897], [41.900112, 12.480804], [41.900068, 12.480823], [41.900063, 12.480791], [41.900013, 12.48048], [41.899996, 12.48021], [41.899964, 12.479825], [41.899964, 12.479789], [41.899983, 12.479603], [41.899968, 12.47919], [41.89988, 12.478975], [41.899791, 12.4788], [41.899734, 12.478716], [41.899684, 12.478747], [41.89964, 12.478593], [41.899568, 12.478446], [41.899538, 12.478399], [41.899526, 12.478355], [41.899459, 12.477985], [41.899356, 12.477287], [41.899305, 12.477145], [41.899154, 12.477036], [41.899149, 12.47692], [41.899142, 12.476805], [41.899141, 12.47678], [41.899133, 12.476635], [41.899439, 12.476602], [41.899522, 12.476592], [41.899523, 12.476505], [41.89952, 12.476439], [41.899403, 12.47512], [41.899398, 12.475029], [41.899395, 12.474837], [41.899394, 12.474063], [41.899393, 12.474049], [41.899393, 12.474014], [41.899392, 12.473993], [41.899387, 12.473856], [41.899385, 12.473791], [41.899384, 12.473779], [41.899142, 12.473804], [41.899123, 12.473395], [41.899117, 12.473313], [41.899112, 12.47325], [41.899172, 12.473037], [41.899209, 12.47291], [41.899206, 12.472847], [41.899811, 12.472797], [41.899805, 12.472696], [41.899803, 12.472246], [41.899829, 12.472245], [41.899953, 12.47225], [41.899983, 12.472183], [41.900078, 12.47214], [41.900229, 12.472126], [41.900453, 12.472128], [41.900462, 12.472084], [41.900469, 12.471939], [41.900477, 12.471738], [41.900478, 12.471615], [41.900474, 12.471325], [41.900477, 12.470922], [41.900476, 12.470898], [41.900477, 12.470845], [41.900481, 12.470659], [41.900481, 12.470625], [41.900478, 12.470198], [41.900486, 12.469834], [41.900504, 12.469499], [41.900508, 12.469427], [41.900527, 12.469011], [41.900527, 12.468988], [41.900527, 12.468963], [41.900538, 12.468503], [41.900535, 12.468172], [41.900548, 12.467653], [41.900554, 12.467504], [41.900555, 12.467415], [41.900555, 12.467373], [41.900701, 12.467216], [41.900738, 12.467178], [41.90113, 12.466787], [41.901134, 12.466717], [41.901123, 12.466573], [41.901121, 12.466521], [41.901212, 12.466521], [41.901234, 12.466519], [41.901281, 12.466516], [41.901316, 12.466513], [41.901327, 12.466513], [41.901724, 12.466478], [41.902457, 12.466414], [41.902468, 12.466412], [41.902513, 12.46641], [41.90251, 12.466367], [41.902483, 12.465836], [41.902431, 12.465426], [41.902407, 12.465068], [41.902404, 12.464867], [41.902399, 12.464406], [41.902396, 12.464293], [41.902395, 12.464253], [41.902394, 12.464233], [41.902381, 12.463632], [41.902368, 12.463075], [41.902365, 12.462948], [41.90236, 12.462761], [41.902337, 12.462014], [41.902335, 12.461947], [41.902308, 12.460904], [41.902303, 12.460697], [41.902301, 12.460609], [41.902281, 12.459678], [41.902279, 12.459619], [41.902269, 12.459187], [41.902268, 12.459173], [41.902264, 12.458794], [41.902258, 12.45838], [41.902257, 12.458365], [41.902256, 12.458352], [41.902256, 12.458275], [41.902055, 12.458268], [41.901938, 12.458245], [41.901819, 12.458201], [41.901795, 12.458192], [41.901737, 12.458163], [41.90165, 12.458113], [41.901537, 12.458014], [41.901436, 12.457898], [41.90136, 12.45776], [41.901299, 12.457607], [41.90127, 12.457469], [41.901257, 12.457222], [41.901275, 12.457055], [41.901327, 12.456888], [41.901379, 12.456762], [41.901308, 12.456693], [41.901302, 12.45669], [41.901249, 12.456577], [41.901214, 12.456543], [41.901176, 12.456515], [41.901115, 12.456495], [41.900826, 12.456522], [41.900802, 12.456512], [41.900689, 12.456513], [41.900583, 12.456513], [41.900473, 12.456508], [41.900396, 12.456505], [41.900387, 12.456504], [41.900297, 12.456494], [41.900107, 12.45645], [41.900078, 12.456441], [41.900027, 12.456424], [41.899926, 12.456381], [41.899838, 12.456344], [41.899737, 12.456298], [41.899634, 12.456256], [41.89961, 12.456243], [41.899572, 12.456225], [41.899532, 12.456198], [41.899377, 12.456013], [41.899365, 12.455925], [41.899379, 12.455893], [41.899371, 12.455884], [41.899335, 12.455849], [41.899315, 12.455882], [41.899228, 12.455892], [41.899187, 12.455874], [41.899045, 12.455652], [41.898909, 12.455486], [41.898753, 12.455336], [41.898579, 12.455191], [41.898504, 12.455147], [41.898501, 12.45509], [41.898491, 12.454882], [41.898478, 12.454813], [41.897927, 12.455007], [41.897891, 12.454929], [41.897841, 12.454815], [41.897562, 12.454195], [41.897455, 12.453956], [41.897429, 12.453897], [41.896645, 12.454792], [41.896596, 12.454715], [41.896554, 12.454656], [41.896523, 12.454637], [41.896495, 12.454634], [41.896473, 12.454641], [41.896433, 12.454677], [41.896394, 12.454618], [41.89629, 12.454744]
+    [41.891218, 12.491383], [41.891155, 12.491916], [41.891097, 12.491915], [41.891072, 12.491915], [41.890944, 12.491915], [41.890966, 12.492103], [41.890971, 12.492242], [41.890964, 12.492358], [41.890942, 12.49252], [41.890906, 12.492744], [41.890846, 12.492954], [41.890749, 12.493175], [41.890571, 12.493529], [41.890501, 12.493629], [41.890429, 12.493694], [41.890307, 12.493741], [41.89016, 12.493717], [41.889967, 12.493622], [41.889848, 12.493564], [41.889879, 12.493453], [41.889834, 12.49337], [41.889742, 12.493263], [41.889634, 12.493107], [41.889568, 12.492974], [41.889523, 12.492806], [41.889471, 12.49242], [41.889487, 12.492192], [41.889472, 12.491963], [41.88952, 12.491793], [41.889599, 12.491572], [41.889613, 12.491548], [41.889739, 12.491349], [41.889867, 12.491208], [41.890029, 12.491132], [41.890183, 12.491101], [41.890307, 12.491094], [41.890431, 12.491109], [41.89051, 12.491131], [41.890649, 12.491204], [41.890763, 12.491309], [41.890837, 12.491412], [41.890885, 12.491499], [41.890913, 12.491437], [41.890913, 12.491437], [41.890922, 12.49142], [41.89099, 12.491177], [41.891059, 12.490929], [41.891098, 12.490779], [41.891203, 12.490416], [41.891262, 12.490453], [41.891285, 12.490382], [41.891319, 12.490307], [41.891614, 12.489782], [41.89175, 12.489541], [41.891777, 12.489494], [41.892009, 12.489079], [41.892476, 12.488249], [41.892494, 12.488267], [41.892538, 12.48831], [41.892713, 12.487955], [41.892929, 12.487574], [41.892965, 12.487492], [41.892991, 12.487407], [41.893042, 12.487289], [41.893077, 12.487226], [41.893161, 12.487074], [41.893291, 12.486887], [41.89347, 12.486677], [41.893734, 12.486316], [41.893883, 12.486048], [41.894083, 12.485696], [41.894604, 12.484746], [41.894515, 12.48461], [41.894516, 12.484606], [41.894515, 12.48461], [41.894279, 12.484288], [41.894211, 12.484232], [41.894167, 12.484212], [41.894083, 12.484188], [41.894039, 12.484183], [41.894036, 12.484165], [41.894024, 12.484055], [41.894017, 12.483988], [41.89401, 12.483921], [41.893775, 12.483897], [41.89372, 12.483872], [41.893655, 12.483823], [41.893482, 12.483648], [41.893393, 12.483578], [41.893391, 12.483576], [41.893417, 12.483511], [41.893418, 12.483493], [41.893408, 12.483471], [41.893356, 12.483432], [41.893306, 12.483236], [41.893261, 12.483061], [41.893221, 12.483007], [41.893206, 12.482927], [41.893225, 12.482857], [41.89327, 12.482804], [41.893328, 12.482789], [41.89331, 12.482641], [41.893291, 12.482477], [41.893255, 12.482428], [41.893198, 12.482366], [41.893091, 12.48224], [41.893255, 12.482428], [41.893291, 12.482477], [41.89331, 12.482641], [41.893378, 12.482629], [41.893403, 12.482634], [41.89345, 12.482661], [41.893472, 12.482612], [41.893776, 12.48196], [41.89378, 12.481954], [41.893821, 12.481986], [41.893838, 12.481984], [41.893862, 12.481982], [41.893941, 12.481987], [41.893943, 12.481997], [41.894316, 12.482148], [41.894525, 12.482249], [41.894551, 12.482245], [41.894583, 12.482271], [41.894605, 12.482303], [41.894624, 12.482274], [41.894649, 12.482263], [41.894655, 12.482283], [41.894913, 12.482179], [41.894952, 12.482167], [41.894988, 12.482166], [41.895044, 12.482169], [41.895083, 12.482181], [41.895154, 12.482218], [41.895183, 12.482242], [41.895241, 12.482312], [41.895287, 12.482403], [41.8953, 12.482443], [41.895337, 12.482433], [41.895365, 12.482447], [41.895374, 12.482461], [41.895397, 12.482556], [41.895441, 12.482741], [41.895472, 12.482871], [41.895496, 12.482968], [41.895493, 12.483003], [41.89551, 12.48301], [41.895556, 12.483025], [41.895727, 12.483108], [41.895742, 12.483115], [41.895753, 12.483076], [41.895766, 12.483057], [41.895965, 12.482962], [41.895974, 12.482994], [41.895985, 12.482988], [41.896012, 12.482973], [41.896041, 12.482957], [41.896053, 12.482951], [41.896047, 12.482929], [41.896099, 12.482902], [41.896639, 12.482657], [41.896665, 12.48266], [41.896715, 12.482956], [41.89677, 12.48335], [41.896777, 12.483385], [41.896884, 12.483348], [41.897037, 12.483359], [41.897111, 12.48334], [41.897656, 12.483081], [41.898438, 12.482743], [41.89846, 12.482829], [41.898495, 12.482925], [41.898603, 12.483157], [41.898934, 12.483082], [41.899264, 12.482985], [41.899617, 12.482842], [41.900185, 12.482578], [41.900438, 12.482469], [41.900481, 12.48245], [41.900509, 12.482481], [41.900567, 12.482722], [41.900724, 12.483129], [41.900713, 12.483133], [41.900724, 12.483129], [41.900567, 12.482722], [41.900509, 12.482481], [41.900481, 12.48245], [41.900433, 12.482309], [41.900327, 12.481816], [41.900132, 12.480897], [41.900112, 12.480804], [41.900068, 12.480823], [41.900063, 12.480791], [41.900013, 12.48048], [41.899996, 12.48021], [41.899964, 12.479825], [41.899964, 12.479789], [41.899983, 12.479603], [41.899968, 12.47919], [41.89988, 12.478975], [41.899791, 12.4788], [41.899734, 12.478716], [41.899684, 12.478747], [41.89964, 12.478593], [41.899568, 12.478446], [41.899538, 12.478399], [41.899526, 12.478355], [41.899459, 12.477985], [41.899356, 12.477287], [41.899305, 12.477145], [41.899154, 12.477036], [41.899149, 12.47692], [41.899142, 12.476805], [41.899141, 12.47678], [41.899133, 12.476635], [41.899439, 12.476602], [41.899522, 12.476592], [41.899523, 12.476505], [41.89952, 12.476439], [41.899403, 12.47512], [41.899398, 12.475029], [41.899395, 12.474837], [41.899394, 12.474063], [41.899393, 12.474049], [41.899393, 12.474014], [41.899392, 12.473993], [41.899387, 12.473856], [41.899385, 12.473791], [41.899384, 12.473779], [41.899142, 12.473804], [41.899123, 12.473395], [41.899117, 12.473313], [41.899112, 12.47325], [41.899172, 12.473037], [41.899209, 12.47291], [41.899206, 12.472847], [41.899811, 12.472797], [41.899805, 12.472696], [41.899803, 12.472246], [41.899829, 12.472245], [41.899953, 12.47225], [41.899983, 12.472183], [41.900078, 12.47214], [41.900229, 12.472126], [41.900453, 12.472128], [41.900462, 12.472084], [41.900469, 12.471939], [41.900477, 12.471738], [41.900478, 12.471615], [41.900474, 12.471325], [41.900477, 12.470922], [41.900476, 12.470898], [41.900477, 12.470845], [41.900481, 12.470659], [41.900481, 12.470625], [41.900478, 12.470198], [41.900486, 12.469834], [41.900504, 12.469499], [41.900508, 12.469427], [41.900527, 12.469011], [41.900527, 12.468988], [41.900527, 12.468963], [41.900538, 12.468503], [41.900535, 12.468172], [41.900548, 12.467653], [41.900554, 12.467504], [41.900555, 12.467415], [41.900555, 12.467373], [41.900701, 12.467216], [41.900738, 12.467178], [41.90113, 12.466787], [41.901134, 12.466717], [41.901123, 12.466573], [41.901121, 12.466521], [41.901212, 12.466521], [41.901234, 12.466519], [41.898491, 12.454882], [41.898478, 12.454813], [41.897927, 12.455007], [41.897891, 12.454929], [41.897841, 12.454815], [41.897562, 12.454195], [41.897455, 12.453956], [41.897429, 12.453897], [41.896645, 12.454792], [41.896596, 12.454715], [41.896554, 12.454656], [41.896523, 12.454637], [41.896495, 12.454634], [41.896473, 12.454641], [41.896433, 12.454677], [41.896394, 12.454618], [41.89629, 12.454744]
 ];
 
 const COLISEO_AUDIO_TEXT = `¡Bienvenido a Roma! Soy tu guía personal y es un placer acompañarte hoy. Estás frente a la mayor obra de ingeniería de la Antigüedad: el Anfiteatro Flavio, aunque el mundo entero lo conoce como el Coliseo.
@@ -71,55 +71,29 @@ const ARCO_CONSTANTINO_AUDIO_TEXT = `¡Bienvenido al Arco de Constantino!
 1. El Monumento a la Victoria
 Estás ante el arco del triunfo más grande y mejor conservado de Roma. Fue erigido en el año 315 d.C. para conmemorar algo que cambió la historia del mundo: la victoria de Constantino sobre su rival Majencio en la Batalla del Puente Milvio.
 
-Dato de experto: Esta batalla es famosa porque, según la leyenda, Constantino tuvo una visión de una cruz en el cielo con las palabras "In hoc signo vinces" (Con este signo vencerás). Fue el primer paso hacia la cristianización del Imperio Romano.
-
 2. Un "Frankenstein" de la Antigüedad
 Acércate un poco más. Si te fijas bien en los relieves y las estatuas, notarás que algunos estilos artísticos parecen diferentes a otros. No es tu imaginación.
 
 Este arco es lo que los arqueólogos llaman un monumento de "spolia". En lugar de crear todo de cero, los constructores "reciclaron" piezas de monumentos de los tres mejores emperadores del pasado: Trajano, Adriano y Marco Aurelio.
 
-¿Por qué lo hicieron? No fue por falta de dinero, sino por propaganda política. Constantino quería decir: "Soy tan grande como los mejores emperadores de la historia dorada de Roma".
-
 3. Guía visual de las piezas recicladas
 Mira hacia las diferentes alturas del arco:
-
-Las estatuas de los prisioneros (arriba): Esas figuras de guerreros con barba que están en la parte superior pertenecen a la época de Trajano. Representan a los dacios derrotados.
-
-Los medallones circulares: Los que ves sobre los arcos laterales son de la época de Adriano. Si te fijas bien, muestran escenas de caza y sacrificios a dioses paganos.
-
-Los paneles cuadrados (en el ático): Los relieves más altos pertenecen a la época de Marco Aurelio. Muestran al emperador distribuyendo dinero al pueblo y en escenas de guerra.
-
-4. La inscripción central
-Si miras el gran bloque de texto en la parte superior central, verás letras talladas profundamente. En una parte dice que Constantino venció a su tirano "instinctu divinitatis" (por inspiración divina).
-
-Es una frase muy ambigua. No menciona a Cristo, pero tampoco a los dioses paganos. Constantino estaba jugando a dos bandas mientras el Imperio cambiaba de fe.
-
-5. El Camino de los Triunfos
-Para terminar, mira el suelo que rodea el arco. Por aquí pasaba la Vía Triumphalis. Imagina el estruendo de los carros, los soldados desfilando con el botín de guerra y los cautivos encadenados pasando bajo estos tres arcos hacia el Foro Romano.
+- Las estatuas de los prisioneros pertenecen a la época de Trajano. 
+- Los medallones circulares son de la época de Adriano. 
+- Los paneles cuadrados más altos pertenecen a la época de Marco Aurelio. 
 
 Es el lugar exacto donde la gloria militar se convertía en leyenda eterna.`;
 
 const LOBA_CAPITULINA_AUDIO_TEXT = `¡Bienvenido a la Loba Capitolina!
 
 1. El Símbolo de la Eternidad
-Mira la silueta de bronce recortada contra el cielo romano. Esta loba, conocida como Luperca, es mucho más que una estatua; es el emblema de la ciudad. Verás a una loba alerta, con las orejas tiesas y la mirada fija, mientras protege a dos bebés que se alimentan de ella.
-
-Dato de experto: Lo que ves aquí es una réplica exacta. La loba original, de bronce fundido, se custodia a pocos metros de donde estás, dentro de los Museos Capitolinos. Durante siglos se creyó que era una obra etrusca del siglo V a.C., aunque estudios recientes de carbono-14 sugieren que el cuerpo de la loba podría ser de la Edad Media.
+Mira la silueta de bronce recortada contra el cielo romano. Esta loba, conocida como Luperca, es el emblema de la ciudad. Lo que ves aquí es una réplica exacta; la original se custodia a pocos metros, dentro de los Museos Capitolinos.
 
 2. La Leyenda de la Fundación
-Cierra los ojos un momento e imagina el río Tíber hace 2.800 años. La leyenda cuenta que el dios Marte dejó embarazada a una vestal llamada Rea Silvia. Sus hijos gemelos, Rómulo y Remo, fueron arrojados al río en una cesta para evitar que fueran asesinados por su tío, el rey Amulio.
+La leyenda cuenta que los gemelos Rómulo y Remo fueron arrojados al río Tíber para evitar que fueran asesinados. La loba los encontró a los pies de esta colina y, en lugar de devorarlos, los amamantó hasta que un pastor los rescató.
 
-La cesta quedó varada en la orilla, a los pies de esta misma colina, y fue allí donde la loba los encontró. En lugar de devorarlos, los amamantó como si fueran sus propios cachorros hasta que un pastor los rescató.
-
-Los Gemelos: Si te fijas bien, los bebés tienen un estilo artístico diferente al de la loba. Eso es porque fueron añadidos mucho después, a finales del siglo XV, por el artista renacentista Antonio del Pollaiolo.
-
-3. SPQR: El rastro de la Loba
-Si miras a tu alrededor, verás las siglas S.P.Q.R. (Senatus Populusque Romanus). La loba es la madre de ese pueblo. Para los antiguos romanos, descender de una fiera y de un dios (Marte) era la justificación perfecta para su destino de conquistar el mundo.
-
-4. El "Mirador Secreto"
-Ahora, haz un giro de 180 grados y dale la espalda a la loba. Lo que tienes frente a ti es, posiblemente, la mejor vista gratuita de Roma.
-
-Desde este balcón natural, tienes el Foro Romano a tus pies. Puedes ver el Arco de Septimio Severo a la izquierda, las columnas del Templo de Saturno y, al fondo, la silueta del Coliseo de donde venimos caminando. Es el lugar donde el mito (la loba) se encuentra con la realidad histórica (las ruinas).`;
+3. El "Mirador Secreto"
+Ahora, haz un giro de 180 grados y dale la espalda a la loba. Lo que tienes frente a ti es, posiblemente, la mejor vista gratuita de Roma. Tienes el Foro Romano a tus pies, con el Arco de Septimio Severo a la izquierda y el Templo de Saturno frente a ti.`;
 
 export const INITIAL_ITINERARY: Activity[] = [
     { 
@@ -276,24 +250,26 @@ export const INITIAL_ITINERARY: Activity[] = [
       endTime: '11:40', 
       locationName: 'Piazza del Campidoglio', 
       coords: COORDS.CAMPIDOGLIO, 
-      description: 'Dato Artístico: Diseñada por Miguel Ángel en el siglo XVI. Fíjate en el diseño geométrico del suelo.', 
-      keyDetails: 'La estatua ecuestre de Marco Aurelio en el centro es una copia fiel de la original.', 
+      description: 'Dato Artístico: La plaza diseñada por Miguel Ángel es la primera plaza moderna de Roma, orientada hacia la ciudad moderna y no hacia el antiguo Foro.', 
+      keyDetails: 'Fíjate en el diseño geométrico del suelo: es una elipse con una estrella de doce puntas que solo se aprecia bien desde arriba.', 
       priceEUR: 0, 
       type: 'sightseeing', 
-      completed: false 
+      completed: false,
+      audioGuideText: 'Bienvenidos a la Colina Capitolina. Esta plaza, proyectada por Miguel Ángel en 1536, fue un encargo del Papa Paulo III para impresionar al emperador Carlos V. Miguel Ángel creó una joya de equilibrio: los edificios están colocados de forma trapezoidal para que la plaza parezca más grande de lo que es. En el centro está la copia de la estatua ecuestre de Marco Aurelio. El diseño del suelo es tan perfecto que fue prohibido por los papas durante siglos por considerarlo demasiado pagano, y no se completó hasta 1940.'
     },
     { 
       id: '12', 
-      title: 'Coloso de Constantino', 
+      title: 'Coloso de Constantino (Recreación)', 
       startTime: '11:40', 
       endTime: '11:50', 
-      locationName: 'Museos Capitolinos', 
+      locationName: 'Villa Caffarelli', 
       coords: COORDS.CAMPIDOGLIO, 
-      description: 'Dato Histórico: En el patio de los museos (visible desde fuera) están los restos de una estatua de 12 metros.', 
-      keyDetails: 'Solo su cabeza mide 2.6 metros de altura.', 
+      description: 'Dato Histórico: Impresionante reconstrucción 3D a tamaño real (13 metros) del Coloso de Constantino, inaugurada en 2024.', 
+      keyDetails: 'Se encuentra en los jardines de Villa Caffarelli (acceso gratuito). Una réplica exacta basada en los fragmentos originales.', 
       priceEUR: 0, 
       type: 'sightseeing', 
-      completed: false 
+      completed: false,
+      audioGuideText: 'Estás ante una hazaña de la tecnología moderna aplicada al patrimonio. Esta figura de 13 metros de altura es la reconstrucción exacta del Coloso de Constantino. Para crearla, se utilizaron escaneos láser de alta resolución de los fragmentos de mármol que se conservan en el patio de los Museos Capitolinos. La estatua representa al emperador sentado, una pose reservada tradicionalmente para los dioses como Júpiter. Fíjate en el contraste entre las partes desnudas de \'mármol\' y el manto dorado; así es como impresionaba a los ciudadanos romanos en el siglo cuarto. Es, sin duda, la mejor forma de comprender la escala del poder imperial antes de que el imperio cambiara para siempre. Solo contempla su dedo índice: es casi tan grande como un brazo humano.'
     },
     { 
       id: '13', 
@@ -302,11 +278,12 @@ export const INITIAL_ITINERARY: Activity[] = [
       endTime: '12:00', 
       locationName: 'Piazza Venezia', 
       coords: COORDS.VITTORIANO, 
-      description: 'Curiosidad: Conocido por los romanos como "La Máquina de Escribir" o "La Tarta de Bodas".', 
-      keyDetails: 'Alberga la tumba del Soldado Desconocido y ofrece de las mejores vistas de la ciudad.', 
+      description: 'Curiosidad: Conocido como el "Vittoriano" o "Altar de la Patria". Es un monumento de mármol blanco puro de Brescia.', 
+      keyDetails: 'Alberga la tumba del Soldado Desconocido custodiada por una llama eterna y guardia de honor.', 
       priceEUR: 0, 
       type: 'sightseeing', 
-      completed: false 
+      completed: false,
+      audioGuideText: 'Estás ante el monumento más polémico de Roma. Los romanos lo llaman con sorna "la tarta de bodas" o "la máquina de escribir" por su blancura deslumbrante que choca con los tonos ocre de la ciudad. Se construyó para celebrar la Unificación de Italia bajo el primer rey, Víctor Manuel II. Arriba del todo, las dos cuadrigas de bronce representan la Libertad y la Unidad. El monumento es colosal: en el interior del caballo de la estatua central se llegó a organizar una cena para 20 personas durante su inauguración.'
     },
     { 
       id: '14', 
@@ -315,11 +292,12 @@ export const INITIAL_ITINERARY: Activity[] = [
       endTime: '12:45', 
       locationName: 'Fontana di Trevi', 
       coords: COORDS.TREVI, 
-      description: 'Leyenda: Lanza una moneda de espaldas con la mano derecha sobre el hombro izquierdo para asegurar tu regreso.', 
-      keyDetails: 'Normativa: Sé respetuoso; está prohibido sentarse en el mármol o comer cerca del agua.', 
+      description: 'Leyenda: La fuente barroca más espectacular de Europa. Representa a Neptuno domando las aguas.', 
+      keyDetails: 'El agua proviene del "Acqua Vergine", un acueducto que ha funcionado durante más de 2000 años.', 
       priceEUR: 2, 
       type: 'sightseeing', 
-      completed: false 
+      completed: false,
+      audioGuideText: '¡Prepárate para la vista más famosa de Roma! La Fontana di Trevi es un escenario teatral excavado en la propia fachada del Palacio Poli. En el centro está Neptuno, guiando su carro de conchas tirado por hipocampos. Fíjate en los dos caballos: uno está tranquilo y el otro agitado, representando los diferentes estados del mar. Cumple con el rito: lanza una moneda de espaldas con la mano derecha sobre el hombro izquierdo. Se dice que si lanzas una volverás a Roma, si lanzas dos encontrarás el amor, y con tres, te casarás.'
     },
     { 
       id: '15', 
@@ -328,11 +306,12 @@ export const INITIAL_ITINERARY: Activity[] = [
       endTime: '12:55', 
       locationName: 'Piazza della Rotonda', 
       coords: COORDS.PANTHEON, 
-      description: 'Dato de Ingeniería: El templo de todos los dioses tiene la cúpula de hormigón no armado más grande del mundo.', 
-      keyDetails: 'El óculo central de 9 metros es la única fuente de luz y deja entrar la lluvia.', 
+      description: 'Dato de Ingeniería: Templo de "todos los dioses", posee la cúpula de hormigón no armado más grande del mundo.', 
+      keyDetails: 'La altura del edificio es exactamente igual a su diámetro: 43.3 metros, creando una esfera perfecta.', 
       priceEUR: 0, 
       type: 'sightseeing', 
-      completed: false 
+      completed: false,
+      audioGuideText: 'Entra en el edificio antiguo mejor conservado del mundo. El Panteón tiene casi 2000 años y su cúpula sigue siendo un misterio de la ingeniería. Mira hacia arriba, al óculo central de 9 metros: es la única fuente de luz. No hay cristales. Si llueve, el agua cae dentro, pero el suelo es ligeramente convexo y tiene 22 pequeños agujeros de drenaje ocultos. Aquí están enterrados el pintor Rafael y los primeros reyes de Italia. Es el lugar donde la arquitectura romana roza la perfección divina.'
     },
     { 
       id: '16', 
@@ -341,11 +320,12 @@ export const INITIAL_ITINERARY: Activity[] = [
       endTime: '13:10', 
       locationName: 'Piazza Navona', 
       coords: COORDS.NAVONA, 
-      description: 'Dato Histórico: Tiene forma ovalada porque se construyó sobre el antiguo Estadio de Domiciano.', 
-      keyDetails: 'No te pierdas la Fuente de los Cuatro Ríos de Bernini con sus gigantes continentes.', 
+      description: 'Dato Histórico: Tiene forma alargada porque se asienta sobre el antiguo Estadio de Domiciano.', 
+      keyDetails: 'La fuente central de Bernini representa los cuatro grandes ríos: Nilo, Ganges, Danubio y Río de la Plata.', 
       priceEUR: 0, 
       type: 'sightseeing', 
-      completed: false 
+      completed: false,
+      audioGuideText: 'Esta plaza es el corazón de la vida social romana. Su forma ovalada se debe a que aquí se celebraban carreras de atletismo en la época romana. La Fuente de los Cuatro Ríos, en el centro, es una obra maestra de Bernini. Una curiosidad: fíjate en la estatua del Río de la Plata, parece que levanta la mano para protegerse de la posible caída de la iglesia de frente, diseñada por Borromini, el gran rival de Bernini. Es una broma artística grabada en piedra para la eternidad.'
     },
     { 
       id: '17', 
@@ -355,10 +335,11 @@ export const INITIAL_ITINERARY: Activity[] = [
       locationName: 'Ponte Sant\'Angelo', 
       coords: COORDS.SANT_ANGELO, 
       description: 'Dato Artístico: Cruzarás el Tíber escoltado por diez ángeles diseñados por Bernini.', 
-      keyDetails: 'Cada ángel sostiene un instrumento de la Pasión de Cristo (cruz, clavos, etc).', 
+      keyDetails: 'Cada ángel sostiene un símbolo diferente de la Pasión de Cristo, como la cruz o la corona de espinas.', 
       priceEUR: 0, 
       type: 'sightseeing', 
-      completed: false 
+      completed: false,
+      audioGuideText: 'Este es, sin duda, el puente más hermoso de Roma. Antiguamente se llamaba Puente Elio. En el siglo XVII, el Papa Clemente IX encargó a Bernini y sus discípulos estas diez estatuas de ángeles. Mientras cruzas, observa cómo cada ángel parece flotar sobre el río Tíber. Este puente era el camino principal de los peregrinos hacia la Basílica de San Pedro, y las estatuas servían para que el caminante meditara sobre el sacrificio de Jesús antes de llegar al Vaticano.'
     },
     { 
       id: '18', 
@@ -367,11 +348,12 @@ export const INITIAL_ITINERARY: Activity[] = [
       endTime: '13:45', 
       locationName: 'Castel Sant\'Angelo', 
       coords: COORDS.SANT_ANGELO, 
-      description: 'Dato Histórico: Originalmente mausoleo de Adriano, luego se convirtió en fortaleza papal.', 
-      keyDetails: 'Existe un pasillo secreto (Passetto di Borgo) que lo conecta con el Vaticano.', 
+      description: 'Dato Histórico: Fue mausoleo de Adriano, fortaleza de los Papas y ahora un imponente museo.', 
+      keyDetails: 'Arriba verás la estatua del arcángel Miguel envainando su espada, señalando el fin de una peste en el año 590.', 
       priceEUR: 0, 
       type: 'sightseeing', 
-      completed: false 
+      completed: false,
+      audioGuideText: 'Estás ante un edificio con mil vidas. Nació como la tumba del emperador Adriano, pero su estructura circular lo hizo perfecto para ser convertido en castillo. Durante siglos fue el lugar más seguro de Roma: los Papas huían aquí cuando la ciudad era atacada a través del Passetto di Borgo, un pasillo secreto sobre la muralla que llega hasta el Vaticano. Si miras a la cima, verás al ángel de bronce que da nombre al castillo, conmemorando la visión del Papa Gregorio Magno.'
     },
     { 
       id: '19', 
@@ -380,11 +362,12 @@ export const INITIAL_ITINERARY: Activity[] = [
       endTime: '14:10', 
       locationName: 'San Pietro', 
       coords: COORDS.S_PIETRO, 
-      description: 'Dato de Guía: Estás en el estado más pequeño del mundo. Observa la columnata de Bernini.', 
-      keyDetails: 'La plaza fue diseñada como dos brazos que "abrazan" a los fieles. Obelisco de Egipto.', 
+      description: 'Dato de Guía: El corazón de la cristiandad. La columnata de Bernini abraza a los visitantes.', 
+      keyDetails: 'Busca los puntos en el suelo cerca del obelisco marcados como "Centro del Colonnato" para ver las columnas alineadas.', 
       priceEUR: 0, 
       type: 'sightseeing', 
-      completed: false 
+      completed: false,
+      audioGuideText: 'Bienvenidos a la Plaza de San Pedro, el abrazo del mundo. Bernini diseñó estas 284 columnas para que parecieran dos brazos que acogen a la humanidad. En el centro verás un obelisco egipcio de 25 metros de altura; es el único obelisco en Roma que nunca se ha caído desde la antigüedad. Un truco: busca entre el obelisco y las fuentes unos discos de mármol en el suelo. Si te paras justo encima, verás que las cuatro filas de columnas se alinean perfectamente y parece que solo hay una. Magia barroca.'
     },
     { 
       id: '20', 
